@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rijschool – Autorijles in Den Haag</title>
+  <meta name="description" content="Autorijles in Den Haag en omgeving. Flexibele lestijden, duidelijke begeleiding. Meld je snel aan via WhatsApp of het formulier.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#" class="logo-link" aria-label="DriveAway Rijschool">
+        <img src="https://assets.codepen.io/16588071/Ontwerp+zonder+titel_1.png" class="site-logo" alt="DriveAway Rijschool">
+      </a>
+      <nav class="desktop-nav">
+        <a href="#reviews">Reviews</a>
+        <a href="#pakketten">Pakketten</a>
+        <a href="#prijzen">Tarieven</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu openen">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#reviews">Reviews</a>
+      <a href="#pakketten">Pakketten</a>
+      <a href="#prijzen">Tarieven</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-layout">
+        <div class="hero-top">
+          <h1>Autorijles in <span>Den Haag</span> – haal je rijbewijs met vertrouwen</h1>
+          <p class="muted">Flexibele lestijden • Rustige begeleiding • Ophalen aan huis</p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#aanmelden">Snel aanmelden</a>
+            <a class="btn" href="tel:+31619701710">Bel direct</a>
+          </div>
+          <div class="rating-badge reveal">
+            <span class="stars">★★★★★</span>
+            <span class="rating-text">9,8/10 – 43 beoordelingen</span>
+          </div>
+        </div>
+
+        <div class="card hero-card reveal">
+          <h3>Rijles in Den Haag en omgeving</h3>
+          <p class="muted">
+            Ben je op zoek naar een betrouwbare en betaalbare rijschool in Den Haag?
+            Bij Rijschool DriveAway krijg je professionele autorijlessen die volledig zijn afgestemd op jouw niveau en tempo.
+          </p>
+          <p class="muted">
+            Of je nu voor het eerst achter het stuur zit of al wat ervaring hebt, samen werken we stap voor stap aan zelfvertrouwen,
+            inzicht en veiligheid in het verkeer.
+          </p>
+          <p class="muted">
+            Ik vind het belangrijk dat jij je op je gemak voelt in de auto. Met duidelijke uitleg, rust en persoonlijke begeleiding
+            zorgen we ervoor dat je goed voorbereid en met vertrouwen je rijexamen ingaat.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#aanmelden">Snel aanmelden</a>
+            <a class="btn whatsapp" href="https://wa.me/31XXXXXXXXX">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="werkwijze" class="section alt reveal">
+      <div class="wrap">
+        <h2>Zo werkt het</h2>
+        <div class="steps">
+          <div class="step">
+            <img src="https://assets.codepen.io/16588071/IMG_0366.jpeg" class="step-icon-img" alt="Kennismaking">
+            <h3>Kennismaking &amp; proefles</h3>
+            <p>Tijdens de proefles leren we elkaar kennen en kijken we samen naar jouw huidige niveau. Op basis daarvan maken we een persoonlijk lesplan dat past bij jouw tempo.</p>
+          </div>
+          <div class="step">
+            <img src="https://assets.codepen.io/16588071/IMG_0367.png" class="step-icon-img" alt="Planning">
+            <h3>Planning maken</h3>
+            <p>We plannen de rijlessen flexibel in, ook in de avond of het weekend. Zo kun je lessen combineren met school of werk.</p>
+          </div>
+          <div class="step">
+            <img src="https://assets.codepen.io/16588071/IMG_0368.jpeg" class="step-icon-img" alt="Rijlessen">
+            <h3>Rijlessen &amp; voorbereiding</h3>
+            <p>Tijdens de lessen werken we gericht aan verkeersinzicht, bijzondere verrichtingen en examenonderdelen. Stap voor stap bouwen we aan jouw zelfvertrouwen.</p>
+          </div>
+          <div class="step">
+            <img src="https://assets.codepen.io/16588071/IMG_0369.jpeg" class="step-icon-img" alt="Examen">
+            <h3>Rijexamen</h3>
+            <p>Wanneer jij er klaar voor bent, plannen we het examen. Goed voorbereid en met vertrouwen ga je het examen in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section alt">
+      <div class="wrap">
+        <div class="reviews-head">
+          <div>
+            <h2>Reviews</h2>
+            <p class="muted">Wat leerlingen over ons zeggen</p>
+          </div>
+          <div class="reviews-controls">
+            <button class="btn" type="button" id="revPrev" aria-label="Vorige review">←</button>
+            <button class="btn" type="button" id="revNext" aria-label="Volgende review">→</button>
+          </div>
+        </div>
+        <div class="reviews-slider" id="reviewsSlider">
+          <article class="review card reveal">
+            <div class="stars">★★★★★</div>
+            <p class="quote">“---”</p>
+            <div class="meta">— Leerling, Den Haag</div>
+          </article>
+          <article class="review card reveal">
+            <div class="stars">★★★★★</div>
+            <p class="quote">“---”</p>
+            <div class="meta">— Leerling, Rijswijk</div>
+          </article>
+          <article class="review card reveal">
+            <div class="stars">★★★★★</div>
+            <p class="quote">“---”</p>
+            <div class="meta">— Leerling, Delft</div>
+          </article>
+          <article class="review card reveal">
+            <div class="stars">★★★★★</div>
+            <p class="quote">“---.”</p>
+            <div class="meta">— Leerling</div>
+          </article>
+        </div>
+        <div class="reviews-dots" id="reviewsDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="pakketten" class="section alt">
+      <div class="wrap">
+        <div class="reviews-head">
+          <div>
+            <h2>Pakketten</h2>
+            <p class="muted">Swipe op mobiel • Vergelijk makkelijk</p>
+          </div>
+          <div class="reviews-controls">
+            <button class="btn" type="button" id="pkgPrev" aria-label="Vorige pakket">←</button>
+            <button class="btn" type="button" id="pkgNext" aria-label="Volgende pakket">→</button>
+          </div>
+        </div>
+        <div class="packages-slider" id="packagesSlider">
+          <article class="package card reveal">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-body">
+              <h3>Pakket 1</h3>
+              <ul class="pkg-list">
+                <li>10 rijlessen à 90 minuten</li>
+                <li>Inclusief rijexamen t.w.v. €310,-</li>
+                <li>Korting €45,-</li>
+                <li>Perfect als je al wat ervaring hebt</li>
+              </ul>
+              <div class="pkg-price">€1210,-</div>
+              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+            </div>
+          </article>
+          <article class="package card popular reveal">
+            <div class="badge-top">Meest gekozen</div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-body">
+              <h3>Pakket 2</h3>
+              <ul class="pkg-list">
+                <li>20 rijlessen à 90 minuten</li>
+                <li>Inclusief rijexamen t.w.v. €310,-</li>
+                <li>Korting €90,-</li>
+                <li>Ideaal voor de meeste beginners</li>
+              </ul>
+              <div class="pkg-price">€2110,-</div>
+              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+            </div>
+          </article>
+          <article class="package card reveal">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-body">
+              <h3>Pakket 3</h3>
+              <ul class="pkg-list">
+                <li>30 rijlessen à 90 minuten</li>
+                <li>Inclusief rijexamen t.w.v. €310,-</li>
+                <li>Korting €135,-</li>
+                <li>Voor maximale slagingskans</li>
+              </ul>
+              <div class="pkg-price">€3010,-</div>
+              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+            </div>
+          </article>
+        </div>
+        <div class="reviews-dots" id="packagesDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="prijzen" class="section alt">
+      <div class="wrap">
+        <h2>Kies wat bij jou past</h2>
+        <div class="lesson-box" id="lessonBox">
+          <div class="lesson-tabs">
+            <button type="button" class="tab active" data-target="pakketten-paneel">Extra lespakketten</button>
+            <button type="button" class="tab" data-target="losse-paneel">Losse lessen</button>
+          </div>
+          <div class="lesson-panels">
+            <div class="tab-panel active" id="pakketten-paneel">
+              <p class="muted">Ideaal als aanvulling of om rustig te starten.</p>
+              <div class="lesson-options">
+                <div class="option">
+                  <h3>5 rijlessen</h3>
+                  <p>5 x 90 minuten</p>
+                  <div class="price">€450,-</div>
+                </div>
+                <div class="option">
+                  <h3>10 rijlessen</h3>
+                  <p>10 x 90 minuten</p>
+                  <div class="price">€900,-</div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-panel" id="losse-paneel">
+              <p class="muted">Flexibel lessen volgen wanneer het jou uitkomt.</p>
+              <div class="lesson-options">
+                <div class="option">
+                  <h3>60 minuten</h3>
+                  <p>Perfect om te starten</p>
+                  <div class="price">€63,-</div>
+                </div>
+                <div class="option">
+                  <h3>90 minuten</h3>
+                  <p>Meest gekozen lesduur</p>
+                  <div class="price">€94,50</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cta-row">
+          <a href="#aanmelden" class="btn primary">Gratis proefles</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="wrap">
+        <h2>Veelgestelde vragen</h2>
+        <div class="faq-item">
+          <button class="faq-question">Hoeveel rijlessen heb ik gemiddeld nodig?</button>
+          <div class="faq-answer">---</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Hoe lang duurt een rijles?</button>
+          <div class="faq-answer">---</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Kan ik in termijnen betalen?</button>
+          <div class="faq-answer">---</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">In welke regio geven jullie les?</button>
+          <div class="faq-answer">---</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Kan ik een proefles nemen?</button>
+          <div class="faq-answer">---</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Waarom rijschool ...?</button>
+          <div class="faq-answer">---</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="aanmelden" class="section reveal signup-section">
+      <div class="wrap">
+        <div class="card">
+          <h3>Snel aanmelden</h3>
+          <p class="muted">Vul dit in of stuur direct een WhatsApp. We reageren zo snel mogelijk.</p>
+          <div class="hero-buttons signup-actions">
+            <a class="btn primary" href="https://wa.me/31XXXXXXXXX">Aanmelden via WhatsApp</a>
+            <a class="btn" href="tel:+31619701710">Bel direct</a>
+          </div>
+          <form action="#" method="post">
+            <div class="grid two">
+              <label>Naam<br><input type="text" required></label>
+              <label>Telefoon<br><input type="tel" required></label>
+            </div>
+            <label>Bericht (optioneel)<br><textarea rows="3"></textarea></label>
+            <button class="btn primary" type="submit">Versturen</button>
+            <p class="muted small">(formspree)</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <div class="grid two">
+          <div class="card">
+            <p><strong>Telefoon:</strong> <a href="tel:+31619701710">+31 6 1970 1710</a></p>
+            <p><strong>WhatsApp:</strong> <a href="https://wa.me/31XXXXXXXXX">Start chat</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:info@[domein].nl">info@…</a></p>
+            <p><strong>Werkgebied:</strong> Den Haag + omgeving</p>
+            <p class="muted">Openingstijden: ma–vr … / za …</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="floating-cta" href="#aanmelden">Proefles aanvragen</a>
+
+  <footer>
+    <div class="wrap muted">
+      © <span id="y"></span> Rijschool ...
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

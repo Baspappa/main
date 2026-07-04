@@ -14,8 +14,9 @@
         <img src="https://assets.codepen.io/16588071/Ontwerp+zonder+titel_1.png" class="site-logo" alt="DriveAway Rijschool">
       </a>
       <nav class="desktop-nav">
-        <a href="#reviews">Reviews</a>
+        <a href="#over">Over</a>
         <a href="#pakketten">Pakketten</a>
+        <a href="#reviews">Reviews</a>
         <a href="#prijzen">Tarieven</a>
         <a href="#werkwijze">Werkwijze</a>
         <a href="#faq">FAQ</a>
@@ -24,8 +25,9 @@
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu openen">☰</button>
     </div>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#reviews">Reviews</a>
+      <a href="#over">Over</a>
       <a href="#pakketten">Pakketten</a>
+      <a href="#reviews">Reviews</a>
       <a href="#prijzen">Tarieven</a>
       <a href="#werkwijze">Werkwijze</a>
       <a href="#faq">FAQ</a>
@@ -35,43 +37,96 @@
 
   <main>
     <section class="hero">
-      <div class="wrap hero-layout">
-        <div class="hero-top">
-          <h1>Autorijles in <span>Den Haag</span> – haal je rijbewijs met vertrouwen</h1>
-          <p class="muted">Flexibele lestijden • Rustige begeleiding • Ophalen aan huis</p>
-          <div class="hero-buttons">
-            <a class="btn primary" href="#aanmelden">Snel aanmelden</a>
-            <a class="btn" href="tel:+31619701710">Bel direct</a>
-          </div>
-          <div class="rating-badge reveal">
-            <span class="stars">★★★★★</span>
-            <span class="rating-text">9,8/10 – 43 beoordelingen</span>
-          </div>
+      <div class="wrap hero-inner">
+        <img src="https://assets.codepen.io/16588071/Ontwerp+zonder+titel_1.png" class="hero-logo reveal" alt="DriveAway Rijschool">
+        <h1>Autorijles in <span>Den Haag</span> – haal je rijbewijs met vertrouwen</h1>
+        <p class="muted hero-sub">Flexibele lestijden • Rustige begeleiding • Ophalen aan huis</p>
+        <div class="hero-buttons hero-buttons-center">
+          <a class="btn primary" href="#aanmelden">Snel aanmelden</a>
+          <a class="btn whatsapp" href="https://wa.me/31XXXXXXXXX">WhatsApp</a>
+          <a class="btn" href="tel:+31619701710">Bel direct</a>
         </div>
-
-        <div class="card hero-card reveal">
-          <h3>Rijles in Den Haag en omgeving</h3>
-          <p class="muted">
-            Ben je op zoek naar een betrouwbare en betaalbare rijschool in Den Haag?
-            Bij Rijschool DriveAway krijg je professionele autorijlessen die volledig zijn afgestemd op jouw niveau en tempo.
-          </p>
-          <p class="muted">
-            Of je nu voor het eerst achter het stuur zit of al wat ervaring hebt, samen werken we stap voor stap aan zelfvertrouwen,
-            inzicht en veiligheid in het verkeer.
-          </p>
-          <p class="muted">
-            Ik vind het belangrijk dat jij je op je gemak voelt in de auto. Met duidelijke uitleg, rust en persoonlijke begeleiding
-            zorgen we ervoor dat je goed voorbereid en met vertrouwen je rijexamen ingaat.
-          </p>
-          <div class="hero-buttons">
-            <a class="btn primary" href="#aanmelden">Snel aanmelden</a>
-            <a class="btn whatsapp" href="https://wa.me/31XXXXXXXXX">WhatsApp</a>
-          </div>
+        <div class="rating-badge reveal">
+          <span class="stars">★★★★★</span>
+          <span class="rating-text">9,8/10 – 43 beoordelingen</span>
         </div>
       </div>
     </section>
 
-    <section id="werkwijze" class="section alt reveal">
+    <section id="over" class="section reveal">
+      <div class="wrap">
+        <h2>Over DriveAway</h2>
+        <div class="over-text">
+          <p>Zes jaar geleden begon mijn avontuur als rijinstructeur. De afgelopen vijf jaar heb ik met veel passie en plezier gewerkt bij een bekende rijschool, waarbij kwaliteit, persoonlijke aandacht en veiligheid altijd centraal stonden. Dankzij deze aanpak heb ik ieder jaar een hoog slagingspercentage weten te behalen.</p>
+          <p>Sinds begin 2026 zet ik deze ervaring voort met mijn eigen rijschool: DriveAway. Mijn doel is om leerlingen niet alleen te helpen hun rijbewijs te behalen, maar ook op te leiden tot veilige, zelfstandige en zelfverzekerde bestuurders.</p>
+          <p>Een goede rijles draait voor mij om meer dan alleen leren rijden. Vertrouwen, inzicht en verantwoord rijgedrag staan centraal. Daarom vind ik een prettige en vertrouwelijke sfeer in de auto erg belangrijk. Wanneer een leerling zich op zijn gemak voelt, ontstaat er meer rust en kan er beter geleerd worden.</p>
+          <p>Iedere leerling is uniek en daarom pas ik mijn lessen aan op jouw niveau, leertempo en doelen. Zo help ik jou om met vertrouwen en veiligheid de weg op te gaan.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pakketten" class="section alt">
+      <div class="wrap">
+        <div class="reviews-head">
+          <div>
+            <h2>Pakketten</h2>
+            <p class="muted">Swipe op mobiel • Vergelijk makkelijk</p>
+          </div>
+          <div class="reviews-controls">
+            <button class="btn" type="button" id="pkgPrev" aria-label="Vorige pakket">←</button>
+            <button class="btn" type="button" id="pkgNext" aria-label="Volgende pakket">→</button>
+          </div>
+        </div>
+        <div class="packages-slider" id="packagesSlider">
+          <article class="package card reveal">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-body">
+              <h3>Pakket 1</h3>
+              <ul class="pkg-list">
+                <li>10 rijlessen à 90 minuten</li>
+                <li>Inclusief rijexamen t.w.v. €310,-</li>
+                <li>Korting €45,-</li>
+                <li>Perfect als je al wat ervaring hebt</li>
+              </ul>
+              <div class="pkg-price">€1210,-</div>
+              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+            </div>
+          </article>
+          <article class="package card popular reveal">
+            <div class="badge-top">Meest gekozen</div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-body">
+              <h3>Pakket 2</h3>
+              <ul class="pkg-list">
+                <li>20 rijlessen à 90 minuten</li>
+                <li>Inclusief rijexamen t.w.v. €310,-</li>
+                <li>Korting €90,-</li>
+                <li>Ideaal voor de meeste beginners</li>
+              </ul>
+              <div class="pkg-price">€2110,-</div>
+              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+            </div>
+          </article>
+          <article class="package card reveal">
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-body">
+              <h3>Pakket 3</h3>
+              <ul class="pkg-list">
+                <li>30 rijlessen à 90 minuten</li>
+                <li>Inclusief rijexamen t.w.v. €310,-</li>
+                <li>Korting €135,-</li>
+                <li>Voor maximale slagingskans</li>
+              </ul>
+              <div class="pkg-price">€3010,-</div>
+              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+            </div>
+          </article>
+        </div>
+        <div class="reviews-dots" id="packagesDots" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section id="werkwijze" class="section reveal">
       <div class="wrap">
         <h2>Zo werkt het</h2>
         <div class="steps">
@@ -137,68 +192,7 @@
       </div>
     </section>
 
-    <section id="pakketten" class="section alt">
-      <div class="wrap">
-        <div class="reviews-head">
-          <div>
-            <h2>Pakketten</h2>
-            <p class="muted">Swipe op mobiel • Vergelijk makkelijk</p>
-          </div>
-          <div class="reviews-controls">
-            <button class="btn" type="button" id="pkgPrev" aria-label="Vorige pakket">←</button>
-            <button class="btn" type="button" id="pkgNext" aria-label="Volgende pakket">→</button>
-          </div>
-        </div>
-        <div class="packages-slider" id="packagesSlider">
-          <article class="package card reveal">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
-            <div class="pkg-body">
-              <h3>Pakket 1</h3>
-              <ul class="pkg-list">
-                <li>10 rijlessen à 90 minuten</li>
-                <li>Inclusief rijexamen t.w.v. €310,-</li>
-                <li>Korting €45,-</li>
-                <li>Perfect als je al wat ervaring hebt</li>
-              </ul>
-              <div class="pkg-price">€1210,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
-            </div>
-          </article>
-          <article class="package card popular reveal">
-            <div class="badge-top">Meest gekozen</div>
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
-            <div class="pkg-body">
-              <h3>Pakket 2</h3>
-              <ul class="pkg-list">
-                <li>20 rijlessen à 90 minuten</li>
-                <li>Inclusief rijexamen t.w.v. €310,-</li>
-                <li>Korting €90,-</li>
-                <li>Ideaal voor de meeste beginners</li>
-              </ul>
-              <div class="pkg-price">€2110,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
-            </div>
-          </article>
-          <article class="package card reveal">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
-            <div class="pkg-body">
-              <h3>Pakket 3</h3>
-              <ul class="pkg-list">
-                <li>30 rijlessen à 90 minuten</li>
-                <li>Inclusief rijexamen t.w.v. €310,-</li>
-                <li>Korting €135,-</li>
-                <li>Voor maximale slagingskans</li>
-              </ul>
-              <div class="pkg-price">€3010,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
-            </div>
-          </article>
-        </div>
-        <div class="reviews-dots" id="packagesDots" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section id="prijzen" class="section alt">
+    <section id="prijzen" class="section">
       <div class="wrap">
         <h2>Kies wat bij jou past</h2>
         <div class="lesson-box" id="lessonBox">

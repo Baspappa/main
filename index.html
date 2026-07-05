@@ -93,7 +93,8 @@
                 <li>Betalen in termijnen mogelijk</li>
               </ul>
               <div class="pkg-price">€1.545,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+              <button class="btn primary" type="button" data-add data-name="Startpakket – 10 rijlessen van 90 min" data-price="1545">Kies dit pakket</button>
+              <a class="pkg-alt-link" href="#aanmelden">of vraag eerst een gratis proefles aan</a>
             </div>
           </article>
           <article class="package card popular reveal">
@@ -112,7 +113,8 @@
                 <li>Betalen in termijnen mogelijk</li>
               </ul>
               <div class="pkg-price">€2.490,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+              <button class="btn primary" type="button" data-add data-name="Pluspakket – 20 rijlessen van 90 min" data-price="2490">Kies dit pakket</button>
+              <a class="pkg-alt-link" href="#aanmelden">of vraag eerst een gratis proefles aan</a>
             </div>
           </article>
           <article class="package card reveal">
@@ -130,7 +132,8 @@
                 <li>Betalen in termijnen mogelijk</li>
               </ul>
               <div class="pkg-price">€2.962,50</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+              <button class="btn primary" type="button" data-add data-name="Compleetpakket – 25 rijlessen van 90 min" data-price="2962.50">Kies dit pakket</button>
+              <a class="pkg-alt-link" href="#aanmelden">of vraag eerst een gratis proefles aan</a>
             </div>
           </article>
           <article class="package card reveal">
@@ -148,7 +151,8 @@
                 <li>Betalen in termijnen mogelijk</li>
               </ul>
               <div class="pkg-price">€3.435,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+              <button class="btn primary" type="button" data-add data-name="Premiumpakket – 30 rijlessen van 90 min" data-price="3435">Kies dit pakket</button>
+              <a class="pkg-alt-link" href="#aanmelden">of vraag eerst een gratis proefles aan</a>
             </div>
           </article>
           <article class="package card spoed reveal">
@@ -170,7 +174,8 @@
                 <li>Betalen in termijnen mogelijk</li>
               </ul>
               <div class="pkg-price">€3.885,-</div>
-              <a class="btn primary" href="#aanmelden">Proefles aanvragen</a>
+              <button class="btn primary" type="button" data-add data-name="Spoedopleiding – 30 rijlessen van 90 min (intensief)" data-price="3885">Kies dit pakket</button>
+              <a class="pkg-alt-link" href="#aanmelden">of vraag eerst een gratis proefles aan</a>
             </div>
           </article>
         </div>
@@ -234,11 +239,13 @@
                   <h3>60 minuten</h3>
                   <p class="muted">Perfect om te starten</p>
                   <div class="price">€63,-</div>
+                  <button class="btn add-btn" type="button" data-add data-name="Losse rijles 60 minuten" data-price="63">+ Toevoegen</button>
                 </div>
                 <div class="option">
                   <h3>90 minuten</h3>
                   <p class="muted">Meest gekozen lesduur</p>
                   <div class="price">€94,50</div>
+                  <button class="btn add-btn" type="button" data-add data-name="Losse rijles 90 minuten" data-price="94.50">+ Toevoegen</button>
                 </div>
               </div>
             </div>
@@ -249,11 +256,13 @@
                   <h3>5 rijlessen</h3>
                   <p class="muted">5 × 90 minuten</p>
                   <div class="price">€450,-</div>
+                  <button class="btn add-btn" type="button" data-add data-name="Extra lespakket – 5 rijlessen (90 min)" data-price="450">+ Toevoegen</button>
                 </div>
                 <div class="option">
                   <h3>10 rijlessen</h3>
                   <p class="muted">10 × 90 minuten</p>
                   <div class="price">€900,-</div>
+                  <button class="btn add-btn" type="button" data-add data-name="Extra lespakket – 10 rijlessen (90 min)" data-price="900">+ Toevoegen</button>
                 </div>
               </div>
             </div>
@@ -358,7 +367,7 @@
               <label>Naam<br><input type="text" required></label>
               <label>Telefoon<br><input type="tel" required></label>
             </div>
-            <label>Bericht (optioneel)<br><textarea rows="3"></textarea></label>
+            <label>Bericht (optioneel)<br><textarea rows="3" id="formBericht"></textarea></label>
             <button class="btn primary" type="submit">Versturen</button>
             <p class="muted small">(formspree)</p>
           </form>
@@ -383,6 +392,25 @@
   </main>
 
   <a class="floating-cta" href="#aanmelden">Proefles aanvragen</a>
+
+  <button class="cart-fab" id="cartFab" type="button" aria-label="Winkelwagen openen">
+    🛒<span class="cart-count" id="cartCount" hidden>0</span>
+  </button>
+  <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Winkelwagen" hidden>
+    <div class="cart-head">
+      <h3>Jouw keuze</h3>
+      <button class="cart-close" id="cartClose" type="button" aria-label="Winkelwagen sluiten">✕</button>
+    </div>
+    <p class="muted cart-empty" id="cartEmpty">Je winkelwagen is nog leeg. Kies een pakket of les en hij verschijnt hier.</p>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot" id="cartFoot" hidden>
+      <div class="cart-total-row"><span>Totaal</span><strong id="cartTotal">€0,-</strong></div>
+      <a class="btn whatsapp cart-send" id="cartWhatsapp" href="https://wa.me/31XXXXXXXXX" target="_blank" rel="noopener">Bestel via WhatsApp</a>
+      <button class="btn primary cart-send" id="cartFormBtn" type="button">Of stuur via het formulier</button>
+      <p class="muted small">Je betaalt nog niets — we nemen contact met je op om alles te bevestigen en in te plannen.</p>
+    </div>
+  </aside>
 
   <footer>
     <div class="wrap muted">

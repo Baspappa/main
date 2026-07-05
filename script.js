@@ -161,6 +161,161 @@ document.addEventListener("DOMContentLoaded", function () {
     setPkgActiveDot();
   }
 
+  // --- Winkelwagen ---
+  const cartFab = document.getElementById("cartFab");
+  const cartDrawer = document.getElementById("cartDrawer");
+  const cartBackdrop = document.getElementById("cartBackdrop");
+  const cartClose = document.getElementById("cartClose");
+  const cartItemsEl = document.getElementById("cartItems");
+  const cartEmptyEl = document.getElementById("cartEmpty");
+  const cartFootEl = document.getElementById("cartFoot");
+  const cartCountEl = document.getElementById("cartCount");
+  const cartTotalEl = document.getElementById("cartTotal");
+  const cartWhatsapp = document.getElementById("cartWhatsapp");
+  const cartFormBtn = document.getElementById("cartFormBtn");
+  const WA_NUMBER = "31XXXXXXXXX";
+
+  if (cartFab && cartDrawer) {
+    let cart = [];
+    try {
+      cart = JSON.parse(localStorage.getItem("da_cart") || "[]");
+    } catch (e) {
+      cart = [];
+    }
+
+    function euro(n) {
+      const parts = n.toFixed(2).split(".");
+      const int = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      return "€" + int + (parts[1] === "00" ? ",-" : "," + parts[1]);
+    }
+
+    function save() {
+      localStorage.setItem("da_cart", JSON.stringify(cart));
+    }
+
+    function orderText() {
+      const lines = cart.map((it) => `• ${it.qty}x ${it.name} — ${euro(it.price * it.qty)}`);
+      const total = cart.reduce((s, it) => s + it.price * it.qty, 0);
+      return (
+        "Hallo! Ik wil graag het volgende aanvragen via rijschool-driveaway.nl:\n" +
+        lines.join("\n") +
+        "\nTotaal: " + euro(total)
+      );
+    }
+
+    function render() {
+      const count = cart.reduce((s, it) => s + it.qty, 0);
+      cartCountEl.hidden = count === 0;
+      cartCountEl.textContent = count;
+      cartEmptyEl.hidden = cart.length > 0;
+      cartFootEl.hidden = cart.length === 0;
+
+      cartItemsEl.innerHTML = "";
+      cart.forEach((it, idx) => {
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        const name = document.createElement("div");
+        name.className = "cart-item-name";
+        name.textContent = it.name;
+
+        const qty = document.createElement("div");
+        qty.className = "cart-qty";
+        const minus = document.createElement("button");
+        minus.type = "button";
+        minus.textContent = "−";
+        minus.setAttribute("aria-label", "Eén minder");
+        minus.addEventListener("click", () => {
+          it.qty -= 1;
+          if (it.qty <= 0) cart.splice(idx, 1);
+          save();
+          render();
+        });
+        const num = document.createElement("span");
+        num.textContent = it.qty;
+        const plus = document.createElement("button");
+        plus.type = "button";
+        plus.textContent = "+";
+        plus.setAttribute("aria-label", "Eén extra");
+        plus.addEventListener("click", () => {
+          it.qty += 1;
+          save();
+          render();
+        });
+        qty.append(minus, num, plus);
+
+        const price = document.createElement("div");
+        price.className = "cart-item-price";
+        price.textContent = euro(it.price * it.qty);
+
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "cart-remove";
+        remove.textContent = "✕";
+        remove.setAttribute("aria-label", "Verwijderen");
+        remove.addEventListener("click", () => {
+          cart.splice(idx, 1);
+          save();
+          render();
+        });
+
+        row.append(name, qty, price, remove);
+        cartItemsEl.appendChild(row);
+      });
+
+      const total = cart.reduce((s, it) => s + it.price * it.qty, 0);
+      cartTotalEl.textContent = euro(total);
+      if (cartWhatsapp) {
+        cartWhatsapp.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(orderText());
+      }
+    }
+
+    function openCart() {
+      cartDrawer.hidden = false;
+      cartBackdrop.hidden = false;
+    }
+
+    function closeCart() {
+      cartDrawer.hidden = true;
+      cartBackdrop.hidden = true;
+    }
+
+    cartFab.addEventListener("click", openCart);
+    cartClose.addEventListener("click", closeCart);
+    cartBackdrop.addEventListener("click", closeCart);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeCart();
+    });
+
+    document.querySelectorAll("[data-add]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const name = btn.getAttribute("data-name");
+        const price = parseFloat(btn.getAttribute("data-price"));
+        const existing = cart.find((it) => it.name === name);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ name: name, price: price, qty: 1 });
+        }
+        save();
+        render();
+        openCart();
+      });
+    });
+
+    if (cartFormBtn) {
+      cartFormBtn.addEventListener("click", () => {
+        const bericht = document.getElementById("formBericht");
+        if (bericht) bericht.value = orderText();
+        closeCart();
+        const doel = document.getElementById("aanmelden");
+        if (doel) doel.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+
+    render();
+  }
+
   const lessonBox = document.getElementById("lessonBox");
   if (lessonBox) {
     const tabs = lessonBox.querySelectorAll(".tab");

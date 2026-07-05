@@ -457,9 +457,14 @@ ul {
   opacity: 0.75;
 }
 
+.faq-item.active .faq-question {
+  color: var(--blue-dark);
+}
+
 .faq-item.active .faq-question::after {
   transform: translateY(-50%) rotate(180deg);
   opacity: 1;
+  color: var(--blue);
 }
 
 .reveal {
@@ -552,7 +557,7 @@ ul {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--brand);
+  color: var(--blue-dark);
   margin-bottom: 2px;
 }
 

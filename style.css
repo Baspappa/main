@@ -2,6 +2,8 @@
   --max: 1100px;
   --brand: #c93b6f;
   --brand-dark: #b8325f;
+  --blue: #5eb0e5;
+  --blue-dark: #3f97cf;
   --wa: #22c55e;
   --surface: #ffffff;
   --surface-2: #f6f7fb;
@@ -242,6 +244,27 @@ ul {
 
 .hero-buttons-center {
   justify-content: center;
+}
+
+/* Blauwe accenten (uit het logo) */
+.hero h1 span {
+  color: var(--blue);
+}
+
+.desktop-nav a:hover,
+.mobile-menu a:hover {
+  color: var(--blue);
+}
+
+#contact .card a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#contact .card a:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
 }
 
 .over-text {

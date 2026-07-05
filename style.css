@@ -405,11 +405,29 @@ ul {
   transform: translateY(-6px);
 }
 
-.step-icon-img {
-  width: 70px;
-  height: auto;
-  margin-bottom: 15px;
-  opacity: 0.85;
+.step-num {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+  color: #fff;
+  font-weight: 900;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  box-shadow: 0 10px 24px rgba(94, 176, 229, 0.35);
+}
+
+/* gestippelde ring — knipoog naar de wegmarkering in het logo */
+.step-num::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 2px dashed rgba(94, 176, 229, 0.5);
+  border-radius: 50%;
 }
 
 .faq-item {

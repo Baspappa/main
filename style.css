@@ -524,6 +524,30 @@ ul {
   padding: 16px;
 }
 
+.pkg-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 2px;
+}
+
+.pkg-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.badge-top.spoed {
+  background: linear-gradient(135deg, var(--brand), #e0679a);
+  color: #fff;
+}
+
+.package.spoed {
+  border: 2px solid rgba(201, 59, 111, 0.4);
+}
+
 .pkg-list {
   list-style: none;
   padding: 0;

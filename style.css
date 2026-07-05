@@ -628,6 +628,11 @@ ul {
   margin-top: 15px;
 }
 
+.section-intro {
+  margin: -4px 0 22px;
+  max-width: 640px;
+}
+
 .option {
   background: #fff;
   padding: 20px;
@@ -635,16 +640,32 @@ ul {
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 44px rgba(2, 6, 23, 0.1);
+  border-color: rgba(201, 59, 111, 0.35);
 }
 
 .option h3 {
   margin: 0 0 5px;
+  font-size: 17px;
+}
+
+.option p {
+  margin: 0;
 }
 
 .option .price {
   font-size: 22px;
   font-weight: 800;
-  margin-top: 10px;
+  margin-top: auto;
+  padding-top: 12px;
+  color: var(--brand);
 }
 
 .cta-row {

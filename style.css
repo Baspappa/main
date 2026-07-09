@@ -798,14 +798,6 @@ footer {
   transform: translateY(1px);
 }
 
-.pkg-alt-link {
-  display: block;
-  margin-top: 10px;
-  font-size: 13px;
-  color: var(--muted);
-  text-decoration: underline;
-}
-
 .add-btn {
   margin-top: 12px;
   font-weight: 700;

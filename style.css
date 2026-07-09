@@ -281,6 +281,36 @@ ul {
   margin-bottom: 0;
 }
 
+.usp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.usp {
+  text-align: center;
+  padding: 24px 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.usp:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(2, 6, 23, 0.1);
+}
+
+.usp h3 {
+  color: var(--blue-dark);
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+.usp p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14.5px;
+}
+
 .price {
   font-size: 26px;
   font-weight: 900;

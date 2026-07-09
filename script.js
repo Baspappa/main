@@ -161,6 +161,45 @@ document.addEventListener("DOMContentLoaded", function () {
     setPkgActiveDot();
   }
 
+  // --- Autootje op de weg bij 'Zo werkt het' ---
+  const stepsRoad = document.getElementById("stepsRoad");
+  const roadCar = document.getElementById("roadCar");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (stepsRoad && roadCar && !reducedMotion) {
+    const mobileQuery = window.matchMedia("(max-width: 900px)");
+
+    function updateCar() {
+      const rect = stepsRoad.getBoundingClientRect();
+      const vh = window.innerHeight;
+      let p = (vh - rect.top) / (vh + rect.height);
+      p = Math.max(0, Math.min(1, p));
+
+      if (mobileQuery.matches) {
+        roadCar.style.left = "";
+        roadCar.style.top = 32 + p * (rect.height - 64) + "px";
+      } else {
+        roadCar.style.top = "";
+        roadCar.style.left = 12.5 + p * 75 + "%";
+      }
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateCar();
+          ticking = false;
+        });
+      }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    updateCar();
+  }
+
   // --- Winkelwagen ---
   const cartFab = document.getElementById("cartFab");
   const cartDrawer = document.getElementById("cartDrawer");

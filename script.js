@@ -172,7 +172,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateCar() {
       const rect = stepsRoad.getBoundingClientRect();
       const vh = window.innerHeight;
-      let p = (vh - rect.top) / (vh + rect.height);
+      // 0 zodra de weg in beeld komt, 1 zodra halte 4 bovenin het scherm staat
+      let p;
+      if (mobileQuery.matches) {
+        p = (vh - rect.top) / (vh * 0.65 + rect.height);
+      } else {
+        p = (vh - rect.top) / (vh * 0.85);
+      }
       p = Math.max(0, Math.min(1, p));
 
       if (mobileQuery.matches) {

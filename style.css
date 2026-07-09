@@ -447,7 +447,7 @@ ul {
 /* het autootje dat meerijdt met het scrollen */
 .road-car {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   top: 3px;
   left: 12.5%;
   font-size: 34px;
@@ -475,7 +475,7 @@ ul {
 
 .step-num {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 64px;
   height: 64px;
   border-radius: 50%;
@@ -518,7 +518,8 @@ ul {
   .road-car {
     top: 32px;
     left: 32px;
-    transform: translate(-50%, -50%) scaleX(-1) rotate(-90deg);
+    font-size: 30px;
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
 
   .step {

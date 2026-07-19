@@ -22,6 +22,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // --- Review-reservoir ---
+  // Voeg hier nieuwe reviews toe: { title, text, name, place, date }
+  // (date en place mogen leeg "" zijn)
+  const REVIEWS = [
+    {
+      title: "Hele fijne rijschool",
+      text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur. Ik denk niet dat ik ergens anders beter of sneller mijn rijbewijs had gehaald.",
+      name: "Meine",
+      place: "Den Haag",
+      date: "18-12-2023"
+    },
+    {
+      title: "Beste rijschool in Den Haag",
+      text: "Beste rijschool in Den Haag! Mijn instructeur Alan Aziz heeft op zijn dag vrij 4u lang de tijd genomen om mij rijles te geven. Wat een top gozer! Hij is streng maar daardoor heb ik wel mijn examen in 1 keer gehaald!!! Hardstikke blij met deze rijschool!!",
+      name: "Leerling",
+      place: "Den Haag",
+      date: ""
+    },
+    {
+      title: "In een keer kunnen halen door uitstekende coaching!",
+      text: "Door de hands-on approach van de instructeur voel je je al snel zelfverzekerd in de auto, je wordt zeker als examenkandidaat enorm geholpen met examengerichte lessen en routes. Mede daarom heb ik het in een keer kunnen halen.",
+      name: "Hidde Visser",
+      place: "Den Haag",
+      date: "23-10-2025"
+    },
+    {
+      title: "Hard werken met uitstekend resultaat!",
+      text: "De lessen waren altijd fijn en nuttig, maar gedurende het traject werd het natuurlijk steeds zwaarder en ingewikkelder. Mijn instructeur kon goed inschatten wat ik nodig had!",
+      name: "Marijn",
+      place: "Delft",
+      date: ""
+    },
+    {
+      title: "Top ervaring!",
+      text: "De rijlessen waren niet alleen heel leerzaam, maar ik ging er ook echt met veel plezier naar toe! Ondanks dat ik een hele slechte concentratie heb, heeft mijn rijinstructeur er alles aan gedaan om mij tot een niveau te brengen, waardoor ik in 1x ben geslaagd!",
+      name: "Phae Louman",
+      place: "'s-Gravenhage",
+      date: "7-7-2021"
+    }
+  ];
+
+  const reviewsContainer = document.getElementById("reviewsSlider");
+  if (reviewsContainer && REVIEWS.length) {
+    const shuffled = REVIEWS.slice().sort(() => Math.random() - 0.5);
+    const count = Math.min(shuffled.length, 5 + Math.floor(Math.random() * 3)); // 5 t/m 7
+    reviewsContainer.innerHTML = "";
+    shuffled.slice(0, count).forEach((r) => {
+      const art = document.createElement("article");
+      art.className = "review card";
+      const stars = document.createElement("div");
+      stars.className = "stars";
+      stars.textContent = "★★★★★";
+      const title = document.createElement("h3");
+      title.className = "review-title";
+      title.textContent = r.title;
+      const quote = document.createElement("p");
+      quote.className = "quote";
+      quote.textContent = "“" + r.text + "”";
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = "— " + r.name + (r.place ? ", " + r.place : "") + (r.date ? " · " + r.date : "");
+      art.append(stars, title, quote, meta);
+      reviewsContainer.appendChild(art);
+    });
+  }
+
   const slider = document.getElementById("reviewsSlider");
   const prevBtn = document.getElementById("revPrev");
   const nextBtn = document.getElementById("revNext");

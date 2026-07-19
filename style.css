@@ -382,9 +382,15 @@ ul {
   margin-bottom: 10px;
 }
 
+.review-title {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
 .quote {
   margin: 0 0 12px;
-  font-size: 16px;
+  font-size: 15px;
+  color: var(--muted);
 }
 
 .meta {

@@ -130,7 +130,7 @@ ul {
 
 .site-logo {
   display: block;
-  height: 72px;
+  height: 44px;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -1045,7 +1045,7 @@ footer {
   }
 
   .site-logo {
-    height: 56px;
+    height: 34px;
   }
 
   .header-inner {

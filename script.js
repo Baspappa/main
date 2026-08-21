@@ -27,15 +27,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // (date en place mogen leeg "" zijn)
   const REVIEWS = [
     {
-      title: "Hele fijne rijschool",
-      text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur. Ik denk niet dat ik ergens anders beter of sneller mijn rijbewijs had gehaald.",
+      title: "In een keer geslaagd",
+      text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur.",
       name: "Meine",
       place: "Den Haag",
       date: "18-12-2023"
     },
     {
-      title: "Beste rijschool in Den Haag",
-      text: "Beste rijschool in Den Haag! Mijn instructeur Alan Aziz heeft op zijn dag vrij 4u lang de tijd genomen om mij rijles te geven. Wat een top gozer! Hij is streng maar daardoor heb ik wel mijn examen in 1 keer gehaald!!! Hardstikke blij met deze rijschool!!",
+      title: "Wat een top gozer!",
+      text: "Mijn instructeur Alan Aziz heeft op zijn dag vrij 4u lang de tijd genomen om mij rijles te geven. Wat een top gozer! Hij is streng maar daardoor heb ik wel mijn examen in 1 keer gehaald!!!",
       name: "Leerling",
       place: "Den Haag",
       date: ""

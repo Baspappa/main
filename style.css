@@ -203,6 +203,17 @@ ul {
   border-color: var(--brand-dark);
 }
 
+.btn.blue {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+
+.btn.blue:hover {
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
+}
+
 .btn.whatsapp {
   background: var(--wa);
   border-color: var(--wa);
@@ -330,8 +341,7 @@ ul {
   gap: 10px;
 }
 
-.reviews-slider,
-.packages-slider {
+.reviews-slider {
   display: flex;
   gap: 16px;
   overflow-x: auto;
@@ -341,37 +351,37 @@ ul {
   -webkit-overflow-scrolling: touch;
 }
 
-.reviews-slider::-webkit-scrollbar,
-.packages-slider::-webkit-scrollbar {
+.reviews-slider::-webkit-scrollbar {
   height: 10px;
 }
 
-.reviews-slider::-webkit-scrollbar-thumb,
-.packages-slider::-webkit-scrollbar-thumb {
+.reviews-slider::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.12);
   border-radius: 999px;
 }
 
-.reviews-slider::-webkit-scrollbar-track,
-.packages-slider::-webkit-scrollbar-track {
+.reviews-slider::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.04);
   border-radius: 999px;
 }
 
-.review,
-.package {
+.review {
   scroll-snap-align: start;
   min-width: 260px;
-}
-
-.review {
   flex: 0 0 calc(33.333% - 11px);
   padding: 20px;
 }
 
+.packages-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  align-items: start;
+  margin-top: 4px;
+}
+
 .package {
   position: relative;
-  flex: 0 0 calc(33.333% - 11px);
   overflow: hidden;
   padding: 0;
 }
@@ -380,6 +390,7 @@ ul {
   letter-spacing: 2px;
   font-weight: 800;
   margin-bottom: 10px;
+  color: #f5a623;
 }
 
 .review-title {
@@ -1065,9 +1076,6 @@ footer {
     flex-basis: 80%;
   }
 
-  .package {
-    flex-basis: 85%;
-  }
 }
 
 @media (min-width: 901px) {

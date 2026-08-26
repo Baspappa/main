@@ -185,48 +185,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const pkgSlider = document.getElementById("packagesSlider");
-  const pkgPrev = document.getElementById("pkgPrev");
-  const pkgNext = document.getElementById("pkgNext");
-  const pkgDotsWrap = document.getElementById("packagesDots");
-
-  if (pkgSlider && pkgPrev && pkgNext && pkgDotsWrap) {
-    const getPkgCardWidth = () => {
-      const first = pkgSlider.querySelector(".package");
-      if (!first) return 300;
-      const gap = parseFloat(getComputedStyle(pkgSlider).gap) || 16;
-      return first.getBoundingClientRect().width + gap;
-    };
-
-    const pkgScrollBy = (dir) => {
-      pkgSlider.scrollBy({ left: dir * getPkgCardWidth(), behavior: "smooth" });
-    };
-
-    pkgPrev.addEventListener("click", () => pkgScrollBy(-1));
-    pkgNext.addEventListener("click", () => pkgScrollBy(1));
-
-    pkgDotsWrap.innerHTML = "";
-    const pkgCards = [...pkgSlider.querySelectorAll(".package")];
-    const pkgDots = pkgCards.map((_, i) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.addEventListener("click", () => {
-        pkgSlider.scrollTo({ left: i * getPkgCardWidth(), behavior: "smooth" });
-      });
-      pkgDotsWrap.appendChild(button);
-      return button;
-    });
-
-    const setPkgActiveDot = () => {
-      const width = getPkgCardWidth();
-      const index = Math.round(pkgSlider.scrollLeft / width);
-      pkgDots.forEach((dot, idx) => dot.classList.toggle("active", idx === index));
-    };
-
-    pkgSlider.addEventListener("scroll", () => requestAnimationFrame(setPkgActiveDot));
-    setPkgActiveDot();
-  }
-
   // --- Autootje op de weg bij 'Zo werkt het' ---
   const stepsRoad = document.getElementById("stepsRoad");
   const roadCar = document.getElementById("roadCar");

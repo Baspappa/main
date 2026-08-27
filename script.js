@@ -109,6 +109,20 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Leerling",
       place: "",
       date: ""
+    },
+    {
+      title: "Geduldig en wilt echt het beste voor jou",
+      text: "Alan is een top rijinstructeur. Alan is geduldig en wilt echt het beste voor jou. Ik voel me veilig in de auto en ben vandaag in 1x geslaagd.",
+      name: "Leerling",
+      place: "",
+      date: ""
+    },
+    {
+      title: "Goede en fijne rijlessen",
+      text: "Een prettige manier van lesgeven gaf Alan. Hij was ervaren, vrolijk en wist veel van het vak. Maar het belangrijkste vond ik dat hij eerlijk was over hoe het rijden ging — op een manier die altijd vriendelijk bleef, waardoor we ook gezellig konden praten. Zelf was ik niet de perfecte leerling, maar Alan wilde mij absoluut goed leren rijden, met veel ezelsbruggetjes en herkenningspunten. Ik ben uiteindelijk in 1 keer geslaagd en dat is grotendeels te danken aan Alans manier van lesgeven. Ik raad hem ten zeerste aan voor iedereen die graag goed wil leren autorijden.",
+      name: "Leerling",
+      place: "",
+      date: ""
     }
   ];
 

@@ -102,6 +102,13 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Leerling",
       place: "",
       date: ""
+    },
+    {
+      title: "Top!",
+      text: "Rijlessen van Alan zijn niet alleen maar standaard rijlessen. Hij is een fantastische leraar, die je vertrouwen geeft en in jezelf laat geloven. Zodra Alan zegt dat je het kan, weet je zeker dat je het kan. Hij neemt de tijd, pakt door en is eerlijk. Een top leraar en vooral erg gezellig en veel lachen. Geen standaard saaie les. Ontzettend bedankt Alan voor de super lessen en vooral onze lachbuien!",
+      name: "Leerling",
+      place: "",
+      date: ""
     }
   ];
 

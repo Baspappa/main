@@ -60,6 +60,48 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Phae Louman",
       place: "'s-Gravenhage",
       date: "7-7-2021"
+    },
+    {
+      title: "Helemaal klaargestoomd voor het examen",
+      text: "Ik ben in 1x geslaagd met dank aan Alan. Hele goede rijlessen, je wordt helemaal klaargestoomd voor het examen. Ook een goede sfeer in de auto. Echt top!! Ik ben super tevreden.",
+      name: "Leerling",
+      place: "",
+      date: ""
+    },
+    {
+      title: "Fijne rijinstructeur die met je meedenkt",
+      text: "Ik heb mijn lessen als prettig en leerzaam ervaren. Alan probeerde waar mogelijk mee te denken en oefent zolang het nodig is. Alan bedankt.",
+      name: "Leerling",
+      place: "",
+      date: ""
+    },
+    {
+      title: "Uitstekende rijinstructeur!",
+      text: "Zelf was ik aan het begin geen natuurtalent in het rijden, maar Alan (mijn rijinstructeur) heeft er toch voor gezorgd dat ik in 1x mijn praktijkexamen heb gehaald! Hij stuurde mij niet naar het examen zonder dat ik het aan kon, maar probeerde er ook voor te zorgen dat ik geen overbodige lessen hoefde te betalen. Verder zorgde hij ervoor dat ik mij op mijn gemak voelde en was het niet altijd alleen maar serieus, maar ook gezellig. Topervaring!",
+      name: "Leerling",
+      place: "",
+      date: ""
+    },
+    {
+      title: "Echt top",
+      text: "Mijn rijinstructeur was Alan. Die heeft mij alles op een rustige en goede manier leren rijden. We hadden samen mooie momenten beleefd en dat gaf mij zelfvertrouwen op de weg, vandaar ben ik in 1 keer geslaagd voor mijn praktijkexamen. Alan je bent de beste. Ga je missen!",
+      name: "Leerling",
+      place: "",
+      date: ""
+    },
+    {
+      title: "Prettige, leuke en leerzame ervaring",
+      text: "Ik heb een erg leuke rijleservaring gehad. Ik heb natuurlijk veel geleerd maar ook gewoon veel plezier gehad. Rijles moet natuurlijk ook leuk zijn en ik keek er dan ook altijd naar uit. Extra dank aan Alan, beste rijinstructeur die een erg prettige manier van leren had en gewoon de omgang in het geheel heeft!! Had niet anders gewild.",
+      name: "Channah",
+      place: "",
+      date: ""
+    },
+    {
+      title: "Fijne rijlessen gehad",
+      text: "Had er eerst veel moeite mee. Dankzij mijn rijinstructeur Alan heb ik mijn rijbewijs gehaald. Ben hem erg dankbaar daarvoor.",
+      name: "Leerling",
+      place: "",
+      date: ""
     }
   ];
 
@@ -86,88 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
       art.append(stars, title, quote, meta);
       reviewsContainer.appendChild(art);
     });
-  }
-
-  const slider = document.getElementById("reviewsSlider");
-  const prevBtn = document.getElementById("revPrev");
-  const nextBtn = document.getElementById("revNext");
-  const dotsWrap = document.getElementById("reviewsDots");
-
-  if (slider && prevBtn && nextBtn && dotsWrap) {
-    function getCardWidth() {
-      const first = slider.querySelector(".review");
-      if (!first) return 300;
-      const gap = parseFloat(getComputedStyle(slider).gap) || 16;
-      return first.getBoundingClientRect().width + gap;
-    }
-
-    function scrollByCard(dir) {
-      slider.scrollBy({ left: dir * getCardWidth(), behavior: "smooth" });
-    }
-
-    prevBtn.addEventListener("click", () => scrollByCard(-1));
-    nextBtn.addEventListener("click", () => scrollByCard(1));
-
-    dotsWrap.innerHTML = "";
-    const cards = [...slider.querySelectorAll(".review")];
-    const dots = cards.map((_, i) => {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.addEventListener("click", () => {
-        slider.scrollTo({ left: i * getCardWidth(), behavior: "smooth" });
-      });
-      dotsWrap.appendChild(button);
-      return button;
-    });
-
-    function setActiveDot() {
-      const width = getCardWidth();
-      const index = Math.round(slider.scrollLeft / width);
-      dots.forEach((dot, idx) => dot.classList.toggle("active", idx === index));
-    }
-
-    slider.addEventListener("scroll", () => requestAnimationFrame(setActiveDot));
-    setActiveDot();
-    slider.setAttribute("tabindex", "0");
-    slider.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowLeft") scrollByCard(-1);
-      if (e.key === "ArrowRight") scrollByCard(1);
-    });
-
-    let autoSlide = null;
-    let resumeTimeout = null;
-
-    function stopAutoSlide() {
-      if (autoSlide) clearInterval(autoSlide);
-      autoSlide = null;
-    }
-
-    function startAutoSlide() {
-      stopAutoSlide();
-      autoSlide = setInterval(() => {
-        scrollByCard(1);
-      }, 4000);
-    }
-
-    function pauseThenResume() {
-      stopAutoSlide();
-      if (resumeTimeout) clearTimeout(resumeTimeout);
-      resumeTimeout = setTimeout(() => {
-        startAutoSlide();
-      }, 6000);
-    }
-
-    slider.addEventListener("mouseenter", stopAutoSlide);
-    slider.addEventListener("mouseleave", startAutoSlide);
-    slider.addEventListener("pointerdown", pauseThenResume, { passive: true });
-    slider.addEventListener("touchstart", pauseThenResume, { passive: true });
-    slider.addEventListener("wheel", pauseThenResume, { passive: true });
-
-    prevBtn.addEventListener("click", pauseThenResume);
-    nextBtn.addEventListener("click", pauseThenResume);
-    dots.forEach((dot) => dot.addEventListener("click", pauseThenResume));
-
-    startAutoSlide();
   }
 
   const hamburger = document.getElementById("hamburgerBtn");
@@ -385,22 +345,22 @@ document.addEventListener("DOMContentLoaded", function () {
     render();
   }
 
-  const lessonBox = document.getElementById("lessonBox");
-  if (lessonBox) {
-    const tabs = lessonBox.querySelectorAll(".tab");
-    const panels = lessonBox.querySelectorAll(".tab-panel");
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const targetId = tab.getAttribute("data-target");
-        const targetPanel = lessonBox.querySelector("#" + targetId);
-
-        tabs.forEach((item) => item.classList.remove("active"));
-        panels.forEach((panel) => panel.classList.remove("active"));
-
-        tab.classList.add("active");
-        if (targetPanel) targetPanel.classList.add("active");
-      });
-    });
+  // --- Mini-animaties bij 'Zo werkt het' ---
+  const sceneSteps = document.querySelectorAll(".steps .step");
+  if (sceneSteps.length && "IntersectionObserver" in window && !reducedMotion) {
+    const sceneObserver = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("play");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    sceneSteps.forEach((s) => sceneObserver.observe(s));
+  } else {
+    sceneSteps.forEach((s) => s.classList.add("play"));
   }
 });

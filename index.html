@@ -199,18 +199,9 @@
 
     <section id="reviews" class="section alt">
       <div class="wrap">
-        <div class="reviews-head">
-          <div>
-            <h2>Reviews</h2>
-            <p class="muted">Wat leerlingen zeggen over instructeur Alan (via klantenvertellen.nl)</p>
-          </div>
-          <div class="reviews-controls">
-            <button class="btn" type="button" id="revPrev" aria-label="Vorige review">←</button>
-            <button class="btn" type="button" id="revNext" aria-label="Volgende review">→</button>
-          </div>
-        </div>
+        <h2>Reviews</h2>
+        <p class="muted section-intro">Wat leerlingen zeggen over instructeur Alan (via klantenvertellen.nl)</p>
         <div class="reviews-slider" id="reviewsSlider"></div>
-        <div class="reviews-dots" id="reviewsDots" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -219,15 +210,10 @@
         <h2>Kies wat bij jou past</h2>
         <p class="muted section-intro">Losse lessen, extra lespakketten en de examenkosten — alles transparant op een rij.</p>
         <div class="lesson-box" id="lessonBox">
-          <div class="lesson-tabs">
-            <button type="button" class="tab active" data-target="losse-paneel">Losse lessen</button>
-            <button type="button" class="tab" data-target="pakketten-paneel">Extra lespakketten</button>
-            <button type="button" class="tab" data-target="examens-paneel">Examens &amp; toetsen</button>
-          </div>
-          <div class="lesson-panels">
-            <div class="tab-panel active" id="losse-paneel">
-              <p class="muted">Flexibel lessen volgen wanneer het jou uitkomt.</p>
-              <div class="lesson-options">
+          <div class="price-group">
+            <h3>Losse lessen</h3>
+            <p class="muted">Flexibel lessen volgen wanneer het jou uitkomt.</p>
+            <div class="lesson-options">
                 <div class="option">
                   <h3>60 minuten</h3>
                   <p class="muted">Perfect om te starten</p>
@@ -240,11 +226,12 @@
                   <div class="price">€94,50</div>
                   <button class="btn add-btn" type="button" data-add data-name="Losse rijles 90 minuten" data-price="94.50">+ Toevoegen</button>
                 </div>
-              </div>
             </div>
-            <div class="tab-panel" id="pakketten-paneel">
-              <p class="muted">Ideaal als aanvulling of om rustig te starten.</p>
-              <div class="lesson-options">
+          </div>
+          <div class="price-group">
+            <h3>Extra lespakketten</h3>
+            <p class="muted">Ideaal als aanvulling of om rustig te starten.</p>
+            <div class="lesson-options">
                 <div class="option">
                   <h3>5 rijlessen</h3>
                   <p class="muted">5 × 90 minuten</p>
@@ -257,11 +244,12 @@
                   <div class="price">€900,-</div>
                   <button class="btn add-btn" type="button" data-add data-name="Extra lespakket – 10 rijlessen (90 min)" data-price="900">+ Toevoegen</button>
                 </div>
-              </div>
             </div>
-            <div class="tab-panel" id="examens-paneel">
-              <p class="muted">Examens en toetsen worden afgenomen door het CBR. Dit zijn de bijbehorende kosten.</p>
-              <div class="lesson-options">
+          </div>
+          <div class="price-group">
+            <h3>Examens &amp; toetsen</h3>
+            <p class="muted">Examens en toetsen worden afgenomen door het CBR. Dit zijn de bijbehorende kosten.</p>
+            <div class="lesson-options">
                 <div class="option">
                   <h3>Praktijkexamen</h3>
                   <div class="price">€310,-</div>
@@ -278,7 +266,6 @@
                   <h3>BNOR-examen</h3>
                   <div class="price">€375,-</div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -295,21 +282,25 @@
           <div class="road-car" id="roadCar" aria-hidden="true">🚗</div>
           <div class="step">
             <div class="step-num">1</div>
+            <div class="step-scene" aria-hidden="true"><span class="sc-left">🧑‍🎓</span><span class="sc-mid sc-shake">🤝</span><span class="sc-right">🧑‍🏫</span></div>
             <h3>Kennismaking &amp; proefles</h3>
             <p>Tijdens de proefles leren we elkaar kennen en kijken we samen naar jouw huidige niveau. Op basis daarvan maken we een persoonlijk lesplan dat past bij jouw tempo.</p>
           </div>
           <div class="step">
             <div class="step-num">2</div>
+            <div class="step-scene" aria-hidden="true"><span class="sc-left">📅</span><span class="sc-mid">✅</span></div>
             <h3>Planning maken</h3>
             <p>We plannen de rijlessen flexibel in, ook in de avond of het weekend. Zo kun je lessen combineren met school of werk.</p>
           </div>
           <div class="step">
             <div class="step-num">3</div>
+            <div class="step-scene" aria-hidden="true"><span class="sc-mid sc-drive">🚗</span><span class="sc-right">🚦</span></div>
             <h3>Rijlessen &amp; voorbereiding</h3>
             <p>Tijdens de lessen werken we gericht aan verkeersinzicht, bijzondere verrichtingen en examenonderdelen. Stap voor stap bouwen we aan jouw zelfvertrouwen.</p>
           </div>
           <div class="step">
             <div class="step-num">4</div>
+            <div class="step-scene" aria-hidden="true"><span class="sc-left">🎓</span><span class="sc-mid sc-late">🎉</span></div>
             <h3>Rijexamen</h3>
             <p>Wanneer jij er klaar voor bent, plannen we het examen. Goed voorbereid en met vertrouwen ga je het examen in.</p>
           </div>
@@ -384,7 +375,7 @@
           <div class="card">
             <p><strong>Telefoon:</strong> <a href="tel:+31619701710">+31 6 1970 1710</a></p>
             <p><strong>WhatsApp:</strong> <a href="https://wa.me/31XXXXXXXXX">Start chat</a></p>
-            <p><strong>E-mail:</strong> <a href="mailto:info@[domein].nl">info@…</a></p>
+            <p><strong>E-mail:</strong> <a href="mailto:info@driveaway.nl">info@driveaway.nl</a></p>
             <p><strong>Werkgebied:</strong> Den Haag + omgeving</p>
             <p class="muted">Openingstijden: ma–vr … / za …</p>
           </div>

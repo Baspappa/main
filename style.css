@@ -423,73 +423,6 @@ ul {
   padding: 0 6px;
 }
 
-.step-scene {
-  height: 34px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  font-size: 25px;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.step.play .sc-left {
-  animation: scSlideL 0.5s ease both;
-}
-
-.step.play .sc-right {
-  animation: scSlideR 0.5s ease 0.15s both;
-}
-
-.step.play .sc-mid {
-  animation: scPop 0.45s ease 0.55s both;
-}
-
-.step.play .sc-mid.sc-shake {
-  animation: scPop 0.45s ease 0.55s both, scShake 0.5s ease 1.1s 2;
-}
-
-.step.play .sc-mid.sc-drive {
-  animation: scDrive 0.7s ease 0.2s both;
-}
-
-.step.play .sc-mid.sc-late {
-  animation: scPop 0.5s ease 0.9s both;
-}
-
-@keyframes scSlideL {
-  from { opacity: 0; transform: translateX(-28px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes scSlideR {
-  from { opacity: 0; transform: translateX(28px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes scPop {
-  from { opacity: 0; transform: scale(0); }
-  60% { transform: scale(1.3); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes scShake {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-12deg); }
-  75% { transform: rotate(12deg); }
-}
-
-@keyframes scDrive {
-  from { opacity: 0; transform: translateX(-40px) scaleX(-1); }
-  70% { transform: translateX(5px) scaleX(-1); }
-  to { opacity: 1; transform: translateX(0) scaleX(-1); }
-}
-
-.sc-drive {
-  transform: scaleX(-1);
-}
-
 .step h3 {
   font-size: 17px;
   margin: 0 0 8px;
@@ -566,13 +499,8 @@ ul {
   }
 
   .step h3,
-  .step p,
-  .step-scene {
+  .step p {
     grid-column: 2;
-  }
-
-  .step-scene {
-    justify-content: flex-start;
   }
 }
 

@@ -345,22 +345,4 @@ document.addEventListener("DOMContentLoaded", function () {
     render();
   }
 
-  // --- Mini-animaties bij 'Zo werkt het' ---
-  const sceneSteps = document.querySelectorAll(".steps .step");
-  if (sceneSteps.length && "IntersectionObserver" in window && !reducedMotion) {
-    const sceneObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("play");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    sceneSteps.forEach((s) => sceneObserver.observe(s));
-  } else {
-    sceneSteps.forEach((s) => s.classList.add("play"));
-  }
 });

@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const reviewsContainer = document.getElementById("reviewsSlider");
   if (reviewsContainer && REVIEWS.length) {
     const shuffled = REVIEWS.slice().sort(() => Math.random() - 0.5);
-    const count = Math.min(shuffled.length, 5 + Math.floor(Math.random() * 3)); // 5 t/m 7
+    const count = Math.min(shuffled.length, 7 + Math.floor(Math.random() * 3)); // 7 t/m 9
     reviewsContainer.innerHTML = "";
     shuffled.slice(0, count).forEach((r) => {
       const art = document.createElement("article");

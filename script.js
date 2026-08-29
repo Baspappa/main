@@ -174,41 +174,55 @@ document.addEventListener("DOMContentLoaded", function () {
   if (stepsRoad && roadCar && !reducedMotion) {
     const mobileQuery = window.matchMedia("(max-width: 900px)");
 
-    function updateCar() {
+    // 0 zodra de weg in beeld komt, 1 zodra de finish bovenin het scherm staat
+    function computeTarget() {
       const rect = stepsRoad.getBoundingClientRect();
       const vh = window.innerHeight;
-      // 0 zodra de weg in beeld komt, 1 zodra halte 4 bovenin het scherm staat
-      let p;
-      if (mobileQuery.matches) {
-        p = (vh - rect.top) / (vh * 0.65 + rect.height);
-      } else {
-        p = (vh - rect.top) / (vh * 0.85);
-      }
-      p = Math.max(0, Math.min(1, p));
+      const p = mobileQuery.matches
+        ? (vh - rect.top) / (vh * 0.65 + rect.height)
+        : (vh - rect.top) / (vh * 0.85);
+      return Math.max(0, Math.min(1, p));
+    }
 
+    function applyCar(p) {
+      const rect = stepsRoad.getBoundingClientRect();
       if (mobileQuery.matches) {
         roadCar.style.left = "";
-        roadCar.style.top = 32 + p * (rect.height - 64) + "px";
+        roadCar.style.top = 27 + p * (rect.height - 54) + "px";
       } else {
         roadCar.style.top = "";
-        roadCar.style.left = 12.5 + p * 75 + "%";
+        roadCar.style.left = 10 + p * 80 + "%";
+      }
+      stepsRoad.classList.toggle("finished", p > 0.96);
+    }
+
+    // de auto glijdt soepel naar zijn doel in plaats van te springen
+    let current = computeTarget();
+    let running = false;
+
+    function step() {
+      const target = computeTarget();
+      current += (target - current) * 0.12;
+      if (Math.abs(target - current) < 0.0008) {
+        current = target;
+        applyCar(current);
+        running = false;
+        return;
+      }
+      applyCar(current);
+      requestAnimationFrame(step);
+    }
+
+    function ensureLoop() {
+      if (!running) {
+        running = true;
+        requestAnimationFrame(step);
       }
     }
 
-    let ticking = false;
-    function onScroll() {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(() => {
-          updateCar();
-          ticking = false;
-        });
-      }
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
-    updateCar();
+    window.addEventListener("scroll", ensureLoop, { passive: true });
+    window.addEventListener("resize", ensureLoop, { passive: true });
+    applyCar(current);
   }
 
   // --- Winkelwagen ---

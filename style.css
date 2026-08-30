@@ -1,7 +1,7 @@
 :root {
   --max: 1100px;
-  --brand: #c93b6f;
-  --brand-dark: #b8325f;
+  --brand: #d55f8f;
+  --brand-dark: #c34d7d;
   --blue: #5eb0e5;
   --blue-dark: #3f97cf;
   --wa: #22c55e;
@@ -193,14 +193,14 @@ ul {
 }
 
 .btn.primary {
-  background: var(--brand);
-  border-color: var(--brand);
+  background: var(--blue);
+  border-color: var(--blue);
   color: #fff;
 }
 
 .btn.primary:hover {
-  background: var(--brand-dark);
-  border-color: var(--brand-dark);
+  background: var(--blue-dark);
+  border-color: var(--blue-dark);
 }
 
 .btn.blue {
@@ -351,6 +351,7 @@ ul {
   position: relative;
   overflow: hidden;
   padding: 0;
+  border: 2px solid rgba(213, 95, 143, 0.35);
 }
 
 .stars {
@@ -462,7 +463,7 @@ ul {
 /* finish-halte: Geslaagd! */
 .step-finish .step-num {
   background: linear-gradient(135deg, var(--brand-dark), var(--brand));
-  box-shadow: 0 10px 24px rgba(201, 59, 111, 0.35);
+  box-shadow: 0 10px 24px rgba(213, 95, 143, 0.35);
   font-size: 24px;
 }
 
@@ -670,7 +671,7 @@ ul {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--blue-dark);
+  color: var(--brand);
   margin-bottom: 2px;
 }
 
@@ -686,7 +687,7 @@ ul {
 }
 
 .package.spoed {
-  border: 2px solid rgba(201, 59, 111, 0.4);
+  border: 2px solid rgba(213, 95, 143, 0.4);
 }
 
 .pkg-list {
@@ -775,7 +776,7 @@ ul {
 .option:hover {
   transform: translateY(-3px);
   box-shadow: 0 22px 44px rgba(2, 6, 23, 0.1);
-  border-color: rgba(201, 59, 111, 0.35);
+  border-color: rgba(94, 176, 229, 0.5);
 }
 
 .option h3 {
@@ -792,7 +793,7 @@ ul {
   font-weight: 800;
   margin-top: auto;
   padding-top: 12px;
-  color: var(--brand);
+  color: var(--text);
 }
 
 .cta-row {
@@ -852,13 +853,13 @@ footer {
 .add-btn {
   margin-top: 12px;
   font-weight: 700;
-  border-color: rgba(201, 59, 111, 0.35);
-  color: var(--brand);
+  border-color: rgba(94, 176, 229, 0.55);
+  color: var(--blue-dark);
 }
 
 .add-btn:hover {
-  background: var(--brand);
-  border-color: var(--brand);
+  background: var(--blue);
+  border-color: var(--blue);
   color: #fff;
 }
 
@@ -981,8 +982,8 @@ footer {
 }
 
 .cart-qty button:hover {
-  border-color: var(--brand);
-  color: var(--brand);
+  border-color: var(--blue);
+  color: var(--blue-dark);
 }
 
 .cart-remove {
@@ -994,7 +995,7 @@ footer {
 }
 
 .cart-remove:hover {
-  color: var(--brand);
+  color: var(--blue-dark);
 }
 
 .cart-foot {
@@ -1013,7 +1014,7 @@ footer {
 
 .cart-total-row strong {
   font-size: 24px;
-  color: var(--brand);
+  color: var(--text);
 }
 
 .cart-send {

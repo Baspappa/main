@@ -776,7 +776,7 @@ ul {
 .option:hover {
   transform: translateY(-3px);
   box-shadow: 0 22px 44px rgba(2, 6, 23, 0.1);
-  border-color: rgba(94, 176, 229, 0.5);
+  border-color: rgba(213, 95, 143, 0.45);
 }
 
 .option h3 {
@@ -853,13 +853,13 @@ footer {
 .add-btn {
   margin-top: 12px;
   font-weight: 700;
-  border-color: rgba(94, 176, 229, 0.55);
-  color: var(--blue-dark);
+  border-color: rgba(213, 95, 143, 0.5);
+  color: var(--brand);
 }
 
 .add-btn:hover {
-  background: var(--blue);
-  border-color: var(--blue);
+  background: var(--brand);
+  border-color: var(--brand);
   color: #fff;
 }
 

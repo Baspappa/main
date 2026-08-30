@@ -257,7 +257,6 @@ ul {
   justify-content: center;
 }
 
-/* Blauwe accenten (uit het logo) */
 .hero h1 span {
   color: var(--blue);
 }
@@ -385,7 +384,6 @@ ul {
   margin-top: 48px;
 }
 
-/* de weg die de stappen verbindt — zoals de D in het logo */
 .steps::before {
   content: "";
   position: absolute;
@@ -406,7 +404,6 @@ ul {
   border-top: 4px dashed rgba(255, 255, 255, 0.9);
 }
 
-/* het autootje dat meerijdt met het scrollen */
 .road-car {
   position: absolute;
   z-index: 1;
@@ -460,7 +457,6 @@ ul {
   box-shadow: 0 10px 24px rgba(94, 176, 229, 0.35);
 }
 
-/* finish-halte: Geslaagd! */
 .step-finish .step-num {
   background: linear-gradient(135deg, var(--brand-dark), var(--brand));
   box-shadow: 0 10px 24px rgba(213, 95, 143, 0.35);
@@ -506,8 +502,7 @@ ul {
     left: 38px;
   }
 
-  /* verticale weg langs de linkerkant */
-  .steps::before {
+    .steps::before {
     top: 27px;
     bottom: 27px;
     left: 17px;
@@ -1054,7 +1049,6 @@ footer {
   .hamburger {
     display: block;
   }
-
 
 }
 

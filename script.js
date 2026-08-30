@@ -22,9 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --- Review-reservoir ---
-  // Voeg hier nieuwe reviews toe: { title, text, name, place, date }
-  // (date en place mogen leeg "" zijn)
   const REVIEWS = [
     {
       title: "In een keer geslaagd",
@@ -129,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const reviewsContainer = document.getElementById("reviewsSlider");
   if (reviewsContainer && REVIEWS.length) {
     const shuffled = REVIEWS.slice().sort(() => Math.random() - 0.5);
-    const count = Math.min(shuffled.length, 7 + Math.floor(Math.random() * 3)); // 7 t/m 9
+    const count = Math.min(shuffled.length, 7 + Math.floor(Math.random() * 3));
     reviewsContainer.innerHTML = "";
     shuffled.slice(0, count).forEach((r) => {
       const art = document.createElement("article");
@@ -166,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --- Autootje op de weg bij 'Zo werkt het' ---
   const stepsRoad = document.getElementById("stepsRoad");
   const roadCar = document.getElementById("roadCar");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -174,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (stepsRoad && roadCar && !reducedMotion) {
     const mobileQuery = window.matchMedia("(max-width: 900px)");
 
-    // 0 zodra de weg in beeld komt, 1 zodra de finish bovenin het scherm staat
     function computeTarget() {
       const rect = stepsRoad.getBoundingClientRect();
       const vh = window.innerHeight;
@@ -196,7 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
       stepsRoad.classList.toggle("finished", p > 0.96);
     }
 
-    // de auto glijdt soepel naar zijn doel in plaats van te springen
     let current = computeTarget();
     let running = false;
 
@@ -225,7 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
     applyCar(current);
   }
 
-  // --- Winkelwagen ---
   const cartFab = document.getElementById("cartFab");
   const cartDrawer = document.getElementById("cartDrawer");
   const cartBackdrop = document.getElementById("cartBackdrop");

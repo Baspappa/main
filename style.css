@@ -277,18 +277,94 @@ ul {
   text-decoration: underline;
 }
 
-.over-text {
-  max-width: 760px;
+.over-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 24px;
 }
 
 .over-text p {
-  margin: 0 0 14px;
+  margin: 0 0 18px;
   color: var(--muted);
   font-size: 16px;
 }
 
 .over-text p:last-child {
   margin-bottom: 0;
+}
+
+.over-text h3 {
+  color: var(--blue-dark);
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.over-text h3 + p {
+  margin-bottom: 22px;
+}
+
+.over-photo {
+  margin: 0;
+  position: sticky;
+  top: 120px;
+}
+
+.photo-slot {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r);
+  border: 2px dashed rgba(94, 176, 229, 0.5);
+  background: linear-gradient(160deg, #f2f8fd, #fdeef4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.over-photo figcaption {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.region-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 6px 14px;
+}
+
+.region-list li {
+  padding-left: 20px;
+  position: relative;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.region-list li::before {
+  content: "📍";
+  position: absolute;
+  left: 0;
+  font-size: 12px;
+}
+
+.package-custom {
+  border-style: dashed;
+  border-width: 2px;
+  background: linear-gradient(160deg, #fff, #fdf4f8);
+}
+
+.pkg-custom-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .usp-grid {
@@ -796,7 +872,6 @@ ul {
 }
 
 .signup-section {
-  background: #fafafa;
   padding-top: 18px;
 }
 
@@ -1029,8 +1104,23 @@ footer {
 
 @media (max-width: 900px) {
   .hero-layout,
-  .two {
+  .two,
+  .over-layout {
     grid-template-columns: 1fr;
+  }
+
+  .over-layout {
+    gap: 24px;
+  }
+
+  .over-photo {
+    position: static;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .photo-slot {
+    aspect-ratio: 4 / 3;
   }
 
   .site-logo {

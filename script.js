@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       title: "Goede en fijne rijlessen",
-      text: "Een prettige manier van lesgeven gaf Alan. Hij was ervaren, vrolijk en wist veel van het vak. Maar het belangrijkste vond ik dat hij eerlijk was over hoe het rijden ging — op een manier die altijd vriendelijk bleef, waardoor we ook gezellig konden praten. Zelf was ik niet de perfecte leerling, maar Alan wilde mij absoluut goed leren rijden, met veel ezelsbruggetjes en herkenningspunten. Ik ben uiteindelijk in 1 keer geslaagd en dat is grotendeels te danken aan Alans manier van lesgeven. Ik raad hem ten zeerste aan voor iedereen die graag goed wil leren autorijden.",
+      text: "Een prettige manier van lesgeven gaf Alan. Hij was ervaren, vrolijk en wist veel van het vak. Maar het belangrijkste vond ik dat hij eerlijk was over hoe het rijden ging, op een manier die altijd vriendelijk bleef, waardoor we ook gezellig konden praten. Zelf was ik niet de perfecte leerling, maar Alan wilde mij absoluut goed leren rijden, met veel ezelsbruggetjes en herkenningspunten. Ik ben uiteindelijk in 1 keer geslaagd en dat is grotendeels te danken aan Alans manier van lesgeven. Ik raad hem ten zeerste aan voor iedereen die graag goed wil leren autorijden.",
       name: "Leerling",
       place: "",
       date: ""
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       quote.textContent = "“" + r.text + "”";
       const meta = document.createElement("div");
       meta.className = "meta";
-      meta.textContent = "— " + r.name + (r.place ? ", " + r.place : "") + (r.date ? " · " + r.date : "");
+      meta.textContent = r.name + (r.place ? ", " + r.place : "") + (r.date ? " · " + r.date : "");
       art.append(stars, title, quote, meta);
       reviewsContainer.appendChild(art);
     });
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function orderText() {
-      const lines = cart.map((it) => `• ${it.qty}x ${it.name} — ${euro(it.price * it.qty)}`);
+      const lines = cart.map((it) => `• ${it.qty}x ${it.name}: ${euro(it.price * it.qty)}`);
       const total = cart.reduce((s, it) => s + it.price * it.qty, 0);
       return (
         "Hallo! Ik wil graag het volgende aanvragen via rijschool-driveaway.nl:\n" +

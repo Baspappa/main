@@ -315,7 +315,7 @@ ul {
   aspect-ratio: 4 / 5;
   border-radius: var(--r);
   border: 2px dashed rgba(94, 176, 229, 0.5);
-  background: linear-gradient(160deg, #f2f8fd, #fdeef4);
+  background: linear-gradient(160deg, #f2f8fd, #e9f3fb);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -357,7 +357,7 @@ ul {
 .package-custom {
   border-style: dashed;
   border-width: 2px;
-  background: linear-gradient(160deg, #fff, #fdf4f8);
+  background: linear-gradient(160deg, #fff, #f4f9fd);
 }
 
 .pkg-custom-actions {
@@ -426,7 +426,7 @@ ul {
   position: relative;
   overflow: hidden;
   padding: 0;
-  border: 2px solid rgba(213, 95, 143, 0.35);
+  border: 2px solid rgba(213, 95, 143, 0.22);
 }
 
 .stars {
@@ -847,7 +847,7 @@ ul {
 .option:hover {
   transform: translateY(-3px);
   box-shadow: 0 22px 44px rgba(2, 6, 23, 0.1);
-  border-color: rgba(213, 95, 143, 0.45);
+  border-color: rgba(94, 176, 229, 0.5);
 }
 
 .option h3 {
@@ -923,13 +923,13 @@ footer {
 .add-btn {
   margin-top: 12px;
   font-weight: 700;
-  border-color: rgba(213, 95, 143, 0.5);
-  color: var(--brand);
+  border-color: rgba(94, 176, 229, 0.55);
+  color: var(--blue-dark);
 }
 
 .add-btn:hover {
-  background: var(--brand);
-  border-color: var(--brand);
+  background: var(--blue);
+  border-color: var(--blue);
   color: #fff;
 }
 

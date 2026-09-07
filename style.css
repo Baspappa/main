@@ -507,7 +507,31 @@ ul {
 
 .step h3 {
   font-size: 17px;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
+}
+
+.step-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  background: rgba(94, 176, 229, 0.14);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+}
+
+.step .step-num {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.step.reached .step-num {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 5px rgba(94, 176, 229, 0.22), 0 10px 24px rgba(94, 176, 229, 0.35);
+}
+
+.step.reached.step-finish .step-num {
+  box-shadow: 0 0 0 5px rgba(213, 95, 143, 0.22), 0 10px 24px rgba(213, 95, 143, 0.35);
 }
 
 .step p {
@@ -618,8 +642,14 @@ ul {
   }
 
   .step h3,
-  .step p {
+  .step p,
+  .step-tag {
     grid-column: 2;
+    justify-self: start;
+  }
+
+  .proefles-callout {
+    padding: 18px;
   }
 }
 
@@ -867,8 +897,44 @@ ul {
   color: var(--text);
 }
 
-.cta-row {
-  margin-top: 20px;
+.proefles-callout {
+  margin-top: 22px;
+  padding: 22px 24px;
+  border-radius: var(--r);
+  border: 1px solid rgba(94, 176, 229, 0.4);
+  background: linear-gradient(135deg, #eaf4fb, #fff 70%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.proefles-text {
+  flex: 1 1 380px;
+}
+
+.proefles-text h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.proefles-text p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.proefles-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-ico {
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  margin-right: 7px;
 }
 
 .signup-section {
@@ -918,6 +984,16 @@ footer {
 
 .floating-cta:active {
   transform: translateY(1px);
+}
+
+.floating-cta {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.floating-cta.is-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
 }
 
 .add-btn {

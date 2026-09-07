@@ -169,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (stepsRoad && roadCar && !reducedMotion) {
     const mobileQuery = window.matchMedia("(max-width: 900px)");
+    const stepEls = stepsRoad.querySelectorAll(".step");
 
     function computeTarget() {
       const rect = stepsRoad.getBoundingClientRect();
@@ -189,6 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
         roadCar.style.left = 10 + p * 80 + "%";
       }
       stepsRoad.classList.toggle("finished", p > 0.96);
+      stepEls.forEach((el, i) => {
+        el.classList.toggle("reached", p >= i / (stepEls.length - 1) - 0.03);
+      });
     }
 
     let current = computeTarget();
@@ -373,4 +377,17 @@ document.addEventListener("DOMContentLoaded", function () {
     render();
   }
 
+  const floatingCta = document.getElementById("floatingCta");
+  const hideZones = [document.querySelector(".hero"), document.getElementById("aanmelden"), document.getElementById("contact")].filter(Boolean);
+  if (floatingCta && hideZones.length && "IntersectionObserver" in window) {
+    const visibleZones = new Set();
+    const zoneObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) visibleZones.add(entry.target);
+        else visibleZones.delete(entry.target);
+      });
+      floatingCta.classList.toggle("is-hidden", visibleZones.size > 0);
+    }, { threshold: 0.15 });
+    hideZones.forEach((z) => zoneObserver.observe(z));
+  }
 });

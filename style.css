@@ -648,9 +648,6 @@ ul {
     justify-self: start;
   }
 
-  .proefles-callout {
-    padding: 18px;
-  }
 }
 
 .faq-item {
@@ -895,39 +892,6 @@ ul {
   margin-top: auto;
   padding-top: 12px;
   color: var(--text);
-}
-
-.proefles-callout {
-  margin-top: 22px;
-  padding: 22px 24px;
-  border-radius: var(--r);
-  border: 1px solid rgba(94, 176, 229, 0.4);
-  background: linear-gradient(135deg, #eaf4fb, #fff 70%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.proefles-text {
-  flex: 1 1 380px;
-}
-
-.proefles-text h3 {
-  margin: 0 0 6px;
-  font-size: 20px;
-}
-
-.proefles-text p {
-  margin: 0;
-  font-size: 15px;
-}
-
-.proefles-actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
 }
 
 .btn-ico {

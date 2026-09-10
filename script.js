@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Fijne rijlessen gehad",
       text: "Had er eerst veel moeite mee. Dankzij mijn rijinstructeur Alan heb ik mijn rijbewijs gehaald. Ben hem erg dankbaar daarvoor.",
-      name: "Leerling",
-      place: "",
+      name: "Jelle",
+      place: "Den Haag",
       date: ""
     },
     {

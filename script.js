@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur.",
       name: "Meine",
       place: "Den Haag",
-      date: "18-12-2023"
+      date: ""
     },
     {
       title: "Wat een top gozer!",
@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
       text: "Door de hands-on approach van de instructeur voel je je al snel zelfverzekerd in de auto, je wordt zeker als examenkandidaat enorm geholpen met examengerichte lessen en routes. Mede daarom heb ik het in een keer kunnen halen.",
       name: "Hidde Visser",
       place: "Den Haag",
-      date: "23-10-2025"
+      date: ""
     },
     {
       title: "Goede persoonlijke begeleiding, in één keer geslaagd",
       text: "Door de goede persoonlijke begeleiding van Alan mijn rijbewijs in een keer gehaald, ik zal mijn rijlessen herinneren als leerzaam en gezellig. Hartstikke bedankt Alan!!",
       name: "Ben",
       place: "Den Haag",
-      date: "23-5-2022"
+      date: ""
     },
     {
       title: "Erg kundige instructeur en goed bestede lessen",
@@ -85,35 +85,35 @@ document.addEventListener("DOMContentLoaded", function () {
       text: "De rijlessen waren niet alleen heel leerzaam, maar ik ging er ook echt met veel plezier naar toe! Ondanks dat ik een hele slechte concentratie heb, heeft mijn rijinstructeur er alles aan gedaan om mij tot een niveau te brengen, waardoor ik in 1x ben geslaagd!",
       name: "Phae Louman",
       place: "'s-Gravenhage",
-      date: "7-7-2021"
+      date: ""
     },
     {
       title: "Helemaal klaargestoomd voor het examen",
       text: "Ik ben in 1x geslaagd met dank aan Alan. Hele goede rijlessen, je wordt helemaal klaargestoomd voor het examen. Ook een goede sfeer in de auto. Echt top!! Ik ben super tevreden.",
       name: "Charlie",
       place: "Den Haag",
-      date: "8-6-2021"
+      date: ""
     },
     {
       title: "Fijne rijinstructeur die met je meedenkt",
       text: "Ik heb mijn lessen als prettig en leerzaam ervaren. Alan probeerde waar mogelijk mee te denken en oefent zolang het nodig is. Alan bedankt.",
       name: "Lionel Iljas",
       place: "'s-Gravenhage",
-      date: "11-5-2021"
+      date: ""
     },
     {
       title: "Uitstekende rijinstructeur!",
       text: "Zelf was ik aan het begin geen natuurtalent in het rijden, maar Alan (mijn rijinstructeur) heeft er toch voor gezorgd dat ik in 1x mijn praktijkexamen heb gehaald! Hij stuurde mij niet naar het examen zonder dat ik het aan kon, maar probeerde er ook voor te zorgen dat ik geen overbodige lessen hoefde te betalen. Verder zorgde hij ervoor dat ik mij op mijn gemak voelde en was het niet altijd alleen maar serieus, maar ook gezellig. Topervaring!",
       name: "Romy",
       place: "Den Haag",
-      date: "18-5-2021"
+      date: ""
     },
     {
       title: "Super fijn!",
       text: "Alan was een zeer fijne instructeur. Alles werd duidelijk en rustig uitgelegd. Ik heb mij nooit zenuwachtig gevoeld in de auto.",
       name: "Berend",
       place: "Den Haag",
-      date: "11-5-2021"
+      date: ""
     },
     {
       title: "Echt top",
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
       text: "Alan is een top rijinstructeur. Alan is geduldig en wilt echt het beste voor jou. Ik voel me veilig in de auto en ben vandaag in 1x geslaagd.",
       name: "Lisa",
       place: "Den Haag",
-      date: "11-4-2023"
+      date: ""
     },
     {
       title: "Goede en fijne rijlessen",

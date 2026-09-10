@@ -125,10 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const reviewsContainer = document.getElementById("reviewsSlider");
   if (reviewsContainer && REVIEWS.length) {
-    const shuffled = REVIEWS.slice().sort(() => Math.random() - 0.5);
-    const count = Math.min(shuffled.length, 7 + Math.floor(Math.random() * 3));
     reviewsContainer.innerHTML = "";
-    shuffled.slice(0, count).forEach((r) => {
+    REVIEWS.forEach((r) => {
       const art = document.createElement("article");
       art.className = "review card";
       const stars = document.createElement("div");
@@ -389,5 +387,36 @@ document.addEventListener("DOMContentLoaded", function () {
       floatingCta.classList.toggle("is-hidden", visibleZones.size > 0);
     }, { threshold: 0.15 });
     hideZones.forEach((z) => zoneObserver.observe(z));
+  }
+
+  const newsGrid = document.getElementById("newsGrid");
+  if (newsGrid && window.fetch && location.protocol !== "file:") {
+    fetch("news.json", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!data || !Array.isArray(data.items) || !data.items.length) return;
+        const items = data.items.filter((n) => n && n.title && n.url).slice(0, 4);
+        if (!items.length) return;
+        newsGrid.innerHTML = "";
+        items.forEach((n) => {
+          const art = document.createElement("article");
+          art.className = "news-item card";
+          const date = document.createElement("div");
+          date.className = "news-date";
+          date.textContent = n.date || "";
+          const h3 = document.createElement("h3");
+          const link = document.createElement("a");
+          link.href = n.url;
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = n.title;
+          h3.appendChild(link);
+          const p = document.createElement("p");
+          p.textContent = n.summary || "";
+          art.append(date, h3, p);
+          newsGrid.appendChild(art);
+        });
+      })
+      .catch(() => {});
   }
 });

@@ -222,12 +222,21 @@ document.addEventListener("DOMContentLoaded", function () {
       return Math.max(0, Math.min(1, p));
     }
 
+    function finishCenter() {
+      const lastStep = stepEls[stepEls.length - 1];
+      const lastNum = lastStep ? lastStep.querySelector(".step-num") : null;
+      if (!lastNum) return stepsRoad.offsetHeight - 27;
+      return lastStep.offsetTop + lastNum.offsetTop + lastNum.offsetHeight / 2;
+    }
+
     function applyCar(p) {
-      const rect = stepsRoad.getBoundingClientRect();
       if (mobileQuery.matches) {
+        const end = finishCenter();
+        stepsRoad.style.setProperty("--road-end", stepsRoad.offsetHeight - end + "px");
         roadCar.style.left = "";
-        roadCar.style.top = 27 + p * (rect.height - 54) + "px";
+        roadCar.style.top = 27 + p * (end - 27) + "px";
       } else {
+        stepsRoad.style.removeProperty("--road-end");
         roadCar.style.top = "";
         roadCar.style.left = 10 + p * 80 + "%";
       }

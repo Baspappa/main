@@ -621,9 +621,9 @@ ul {
     left: 38px;
   }
 
-    .steps::before {
+  .steps::before {
     top: 27px;
-    bottom: 27px;
+    bottom: var(--road-end, 27px);
     left: 17px;
     right: auto;
     width: 20px;
@@ -632,7 +632,7 @@ ul {
 
   .steps::after {
     top: 35px;
-    bottom: 35px;
+    bottom: calc(var(--road-end, 27px) + 8px);
     left: 25px;
     right: auto;
     border-top: none;

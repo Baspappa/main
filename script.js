@@ -31,6 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
       date: ""
     },
     {
+      title: "Veel zelfvertrouwen gekregen",
+      text: "Ik heb door mijn rijinstructeur Alan veel zelfvertrouwen gekregen en daardoor mijn praktijkexamen gehaald! Ik vond het eerst moeilijk, maar ik ben heel goed ondersteund.",
+      name: "Eudora Arefaine",
+      place: "",
+      date: ""
+    },
+    {
       title: "In een keer geslaagd",
       text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur.",
       name: "Meine",
@@ -83,16 +90,16 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Helemaal klaargestoomd voor het examen",
       text: "Ik ben in 1x geslaagd met dank aan Alan. Hele goede rijlessen, je wordt helemaal klaargestoomd voor het examen. Ook een goede sfeer in de auto. Echt top!! Ik ben super tevreden.",
-      name: "Leerling",
-      place: "",
-      date: ""
+      name: "Charlie",
+      place: "Den Haag",
+      date: "8-6-2021"
     },
     {
       title: "Fijne rijinstructeur die met je meedenkt",
       text: "Ik heb mijn lessen als prettig en leerzaam ervaren. Alan probeerde waar mogelijk mee te denken en oefent zolang het nodig is. Alan bedankt.",
-      name: "Leerling",
-      place: "",
-      date: ""
+      name: "Lionel Iljas",
+      place: "'s-Gravenhage",
+      date: "11-5-2021"
     },
     {
       title: "Uitstekende rijinstructeur!",
@@ -100,6 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
       name: "Romy",
       place: "Den Haag",
       date: "18-5-2021"
+    },
+    {
+      title: "Super fijn!",
+      text: "Alan was een zeer fijne instructeur. Alles werd duidelijk en rustig uitgelegd. Ik heb mij nooit zenuwachtig gevoeld in de auto.",
+      name: "Berend",
+      place: "Den Haag",
+      date: "11-5-2021"
     },
     {
       title: "Echt top",
@@ -132,9 +146,9 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Geduldig en wilt echt het beste voor jou",
       text: "Alan is een top rijinstructeur. Alan is geduldig en wilt echt het beste voor jou. Ik voel me veilig in de auto en ben vandaag in 1x geslaagd.",
-      name: "Leerling",
-      place: "",
-      date: ""
+      name: "Lisa",
+      place: "Den Haag",
+      date: "11-4-2023"
     },
     {
       title: "Goede en fijne rijlessen",

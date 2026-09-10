@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const REVIEWS = [
     {
+      title: "Een hele goede match",
+      text: "De manier van lesgeven van Alan sloot gewoon heel goed bij mij aan. Alan nam altijd de tijd voor me en bleef rustig uitleggen wanneer iets niet meteen lukte. Soms zat ik tijdens de les wat minder lekker in mijn vel of legde ik de lat voor mezelf veel te hoog, waardoor ik best emotioneel kon worden. Alan wist me dan altijd weer op mijn gemak te stellen en gaf me het vertrouwen dat ik het wel kon. Dankzij zijn geduld, coaching en fijne manier van lesgeven heeft hij mij echt goed begeleid naar mijn praktijkexamen. Achteraf denk ik zelfs: had ik hem maar vanaf het begin als instructeur gehad! Bedankt voor alle fijne lessen en gesprekken, Alan!",
+      name: "Deveny van Daalen",
+      place: "",
+      date: ""
+    },
+    {
       title: "In een keer geslaagd",
       text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur.",
       name: "Meine",
@@ -75,9 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Uitstekende rijinstructeur!",
       text: "Zelf was ik aan het begin geen natuurtalent in het rijden, maar Alan (mijn rijinstructeur) heeft er toch voor gezorgd dat ik in 1x mijn praktijkexamen heb gehaald! Hij stuurde mij niet naar het examen zonder dat ik het aan kon, maar probeerde er ook voor te zorgen dat ik geen overbodige lessen hoefde te betalen. Verder zorgde hij ervoor dat ik mij op mijn gemak voelde en was het niet altijd alleen maar serieus, maar ook gezellig. Topervaring!",
-      name: "Leerling",
-      place: "",
-      date: ""
+      name: "Romy",
+      place: "Den Haag",
+      date: "18-5-2021"
     },
     {
       title: "Echt top",
@@ -103,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Top!",
       text: "Rijlessen van Alan zijn niet alleen maar standaard rijlessen. Hij is een fantastische leraar, die je vertrouwen geeft en in jezelf laat geloven. Zodra Alan zegt dat je het kan, weet je zeker dat je het kan. Hij neemt de tijd, pakt door en is eerlijk. Een top leraar en vooral erg gezellig en veel lachen. Geen standaard saaie les. Ontzettend bedankt Alan voor de super lessen en vooral onze lachbuien!",
-      name: "Leerling",
-      place: "",
+      name: "Flo",
+      place: "Den Haag",
       date: ""
     },
     {

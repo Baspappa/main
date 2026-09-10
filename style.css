@@ -406,14 +406,16 @@ ul {
 }
 
 .reviews-slider {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  align-items: start;
+  columns: 3 300px;
+  column-gap: 16px;
 }
 
 .review {
   padding: 20px;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 16px;
+  break-inside: avoid;
 }
 
 .packages-slider {
@@ -826,17 +828,30 @@ ul {
 }
 
 .pkg-terms {
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-  margin: 2px 0 12px;
+  display: inline-block;
+  color: var(--blue-dark);
+  background: rgba(94, 176, 229, 0.14);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 6px 0 14px;
 }
 
 .pkg-note {
   margin: 18px auto 0;
-  max-width: 720px;
+  max-width: 760px;
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
+  color: var(--text);
+  background: rgba(94, 176, 229, 0.1);
+  border: 1px solid rgba(94, 176, 229, 0.35);
+  border-radius: var(--r);
+  padding: 14px 18px;
+}
+
+.pkg-note strong {
+  color: var(--blue-dark);
 }
 
 .stage-layout {
@@ -1368,8 +1383,15 @@ footer {
   }
 
   .pkg-terms {
-    font-size: 11.5px;
-    margin: 0 0 8px;
+    font-size: 11px;
+    padding: 4px 8px;
+    margin: 4px 0 8px;
+    line-height: 1.3;
+  }
+
+  .pkg-note {
+    font-size: 14px;
+    padding: 12px 14px;
   }
 
   .package .btn {

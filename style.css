@@ -287,6 +287,10 @@ ul {
   margin-top: 24px;
 }
 
+.over-layout .over-text {
+  padding: 26px 28px;
+}
+
 .over-text p {
   margin: 0 0 18px;
   color: var(--muted);
@@ -1290,6 +1294,10 @@ footer {
 
   .over-layout {
     gap: 24px;
+  }
+
+  .over-layout .over-text {
+    padding: 20px 18px;
   }
 
   .over-photo {

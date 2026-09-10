@@ -434,9 +434,24 @@ ul {
 }
 
 .stars {
+  position: relative;
+  display: inline-block;
   letter-spacing: 2px;
   font-weight: 800;
   margin-bottom: 10px;
+  line-height: 1;
+}
+
+.stars-bg {
+  color: #e2e5ea;
+}
+
+.stars-fg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
   color: #f5a623;
 }
 

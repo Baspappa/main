@@ -52,6 +52,21 @@ document.addEventListener("DOMContentLoaded", function () {
       date: "23-10-2025"
     },
     {
+      title: "Goede persoonlijke begeleiding, in één keer geslaagd",
+      text: "Door de goede persoonlijke begeleiding van Alan mijn rijbewijs in een keer gehaald, ik zal mijn rijlessen herinneren als leerzaam en gezellig. Hartstikke bedankt Alan!!",
+      name: "Ben",
+      place: "Den Haag",
+      date: "23-5-2022"
+    },
+    {
+      title: "Erg kundige instructeur en goed bestede lessen",
+      text: "Alan geeft je goed onderbouwde feedback zodat je jezelf kunt verbeteren waar nodig. Ik was zeker niet de makkelijkste leerling, maar hij heeft geduld voor tien. De lessen zijn goed opgebouwd en er is veel ruimte voor nabespreking.",
+      name: "Leerling",
+      place: "",
+      date: "",
+      stars: 4.5
+    },
+    {
       title: "Hard werken met uitstekend resultaat!",
       text: "De lessen waren altijd fijn en nuttig, maar gedurende het traject werd het natuurlijk steeds zwaarder en ingewikkelder. Mijn instructeur kon goed inschatten wat ik nodig had!",
       name: "Marijn",
@@ -89,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Echt top",
       text: "Mijn rijinstructeur was Alan. Die heeft mij alles op een rustige en goede manier leren rijden. We hadden samen mooie momenten beleefd en dat gaf mij zelfvertrouwen op de weg, vandaar ben ik in 1 keer geslaagd voor mijn praktijkexamen. Alan je bent de beste. Ga je missen!",
-      name: "Leerling",
-      place: "",
+      name: "Kai",
+      place: "Den Haag",
       date: ""
     },
     {
@@ -138,7 +153,15 @@ document.addEventListener("DOMContentLoaded", function () {
       art.className = "review card";
       const stars = document.createElement("div");
       stars.className = "stars";
-      stars.textContent = "★★★★★";
+      const starsBg = document.createElement("span");
+      starsBg.className = "stars-bg";
+      starsBg.textContent = "★★★★★";
+      const starsFg = document.createElement("span");
+      starsFg.className = "stars-fg";
+      starsFg.textContent = "★★★★★";
+      starsFg.style.width = ((r.stars || 5) / 5 * 100) + "%";
+      stars.setAttribute("aria-label", (r.stars || 5) + " van 5 sterren");
+      stars.append(starsBg, starsFg);
       const title = document.createElement("h3");
       title.className = "review-title";
       title.textContent = r.title;

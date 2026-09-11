@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Veel zelfvertrouwen gekregen",
       text: "Ik heb door mijn rijinstructeur Alan veel zelfvertrouwen gekregen en daardoor mijn praktijkexamen gehaald! Ik vond het eerst moeilijk, maar ik ben heel goed ondersteund.",
-      featured: true,
       name: "Eudora Arefaine",
       place: "",
       date: ""
@@ -41,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "In een keer geslaagd",
       text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur.",
-      featured: true,
       name: "Meine",
       place: "Den Haag",
       date: ""
@@ -56,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "In een keer kunnen halen door uitstekende coaching!",
       text: "Door de hands-on approach van de instructeur voel je je al snel zelfverzekerd in de auto, je wordt zeker als examenkandidaat enorm geholpen met examengerichte lessen en routes. Mede daarom heb ik het in een keer kunnen halen.",
-      featured: true,
       name: "Hidde Visser",
       place: "Den Haag",
       date: ""
@@ -196,10 +193,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const reviewsAll = document.getElementById("reviewsAll");
   const reviewsOverlay = document.getElementById("reviewsOverlay");
   const reviewsOpen = document.getElementById("reviewsOpen");
-  const PREVIEW_COUNT = 3;
+  const PREVIEW_COUNT = 4;
   if (reviewsContainer && REVIEWS.length) {
-    const featured = REVIEWS.filter((r) => r.featured);
-    renderReviews(reviewsContainer, (featured.length ? featured : REVIEWS).slice(0, PREVIEW_COUNT));
+    const short = REVIEWS.filter((r) => r.text.length <= 420);
+    const pool = (short.length >= PREVIEW_COUNT ? short : REVIEWS).slice().sort(() => Math.random() - 0.5);
+    renderReviews(reviewsContainer, pool.slice(0, PREVIEW_COUNT));
     if (reviewsOpen) {
       if (REVIEWS.length <= PREVIEW_COUNT) reviewsOpen.hidden = true;
       else reviewsOpen.textContent = "Alle " + REVIEWS.length + " reviews bekijken";

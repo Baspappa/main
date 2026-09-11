@@ -323,7 +323,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const bericht = (document.getElementById("formBericht").value || "").trim();
       let text = "Hoi Alan, ik wil me graag aanmelden voor rijles.\nNaam: " + naam + "\nTelefoon: " + tel;
       if (bericht) text += "\n\n" + bericht;
-      window.open("https://wa.me/31XXXXXXXXX?text=" + encodeURIComponent(text), "_blank", "noopener");
+      const url = "https://wa.me/31XXXXXXXXX?text=" + encodeURIComponent(text);
+      const link = document.createElement("a");
+      link.href = url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
       const note = document.getElementById("formNote");
       if (note) note.hidden = false;
     });

@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "Veel zelfvertrouwen gekregen",
       text: "Ik heb door mijn rijinstructeur Alan veel zelfvertrouwen gekregen en daardoor mijn praktijkexamen gehaald! Ik vond het eerst moeilijk, maar ik ben heel goed ondersteund.",
+      featured: true,
       name: "Eudora Arefaine",
       place: "",
       date: ""
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "In een keer geslaagd",
       text: "Ik heb een half jaar gelesd bij Alan en ben in een keer geslaagd, super fijne aardige en vooral rustige instructeur.",
+      featured: true,
       name: "Meine",
       place: "Den Haag",
       date: ""
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       title: "In een keer kunnen halen door uitstekende coaching!",
       text: "Door de hands-on approach van de instructeur voel je je al snel zelfverzekerd in de auto, je wordt zeker als examenkandidaat enorm geholpen met examengerichte lessen en routes. Mede daarom heb ik het in een keer kunnen halen.",
+      featured: true,
       name: "Hidde Visser",
       place: "Den Haag",
       date: ""
@@ -159,10 +162,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  const reviewsContainer = document.getElementById("reviewsSlider");
-  if (reviewsContainer && REVIEWS.length) {
-    reviewsContainer.innerHTML = "";
-    REVIEWS.forEach((r) => {
+  function renderReviews(container, list) {
+    container.innerHTML = "";
+    list.forEach((r) => {
       const art = document.createElement("article");
       art.className = "review card";
       const stars = document.createElement("div");
@@ -181,12 +183,51 @@ document.addEventListener("DOMContentLoaded", function () {
       title.textContent = r.title;
       const quote = document.createElement("p");
       quote.className = "quote";
-      quote.textContent = "“" + r.text + "”";
+      quote.textContent = "\u201c" + r.text + "\u201d";
       const meta = document.createElement("div");
       meta.className = "meta";
-      meta.textContent = r.name + (r.place ? ", " + r.place : "") + (r.date ? " · " + r.date : "");
+      meta.textContent = r.name + (r.place ? ", " + r.place : "") + (r.date ? " \u00b7 " + r.date : "");
       art.append(stars, title, quote, meta);
-      reviewsContainer.appendChild(art);
+      container.appendChild(art);
+    });
+  }
+
+  const reviewsContainer = document.getElementById("reviewsSlider");
+  const reviewsAll = document.getElementById("reviewsAll");
+  const reviewsOverlay = document.getElementById("reviewsOverlay");
+  const reviewsOpen = document.getElementById("reviewsOpen");
+  const PREVIEW_COUNT = 3;
+  if (reviewsContainer && REVIEWS.length) {
+    const featured = REVIEWS.filter((r) => r.featured);
+    renderReviews(reviewsContainer, (featured.length ? featured : REVIEWS).slice(0, PREVIEW_COUNT));
+    if (reviewsOpen) {
+      if (REVIEWS.length <= PREVIEW_COUNT) reviewsOpen.hidden = true;
+      else reviewsOpen.textContent = "Alle " + REVIEWS.length + " reviews bekijken";
+    }
+  }
+  if (reviewsAll && reviewsOverlay && reviewsOpen) {
+    let filled = false;
+    function openReviews() {
+      if (!filled) {
+        renderReviews(reviewsAll, REVIEWS);
+        filled = true;
+      }
+      reviewsOverlay.hidden = false;
+      reviewsOverlay.scrollTop = 0;
+      document.body.style.overflow = "hidden";
+    }
+    function closeReviews() {
+      reviewsOverlay.hidden = true;
+      document.body.style.overflow = "";
+      reviewsOpen.focus();
+    }
+    reviewsOpen.addEventListener("click", openReviews);
+    ["reviewsClose", "reviewsCloseBottom"].forEach((id) => {
+      const btn = document.getElementById(id);
+      if (btn) btn.addEventListener("click", closeReviews);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !reviewsOverlay.hidden) closeReviews();
     });
   }
 

@@ -313,6 +313,22 @@ document.addEventListener("DOMContentLoaded", function () {
     applyCar(current);
   }
 
+  const signupForm = document.getElementById("signupForm");
+  if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!signupForm.reportValidity()) return;
+      const naam = document.getElementById("formNaam").value.trim();
+      const tel = document.getElementById("formTelefoon").value.trim();
+      const bericht = (document.getElementById("formBericht").value || "").trim();
+      let text = "Hoi Alan, ik wil me graag aanmelden voor rijles.\nNaam: " + naam + "\nTelefoon: " + tel;
+      if (bericht) text += "\n\n" + bericht;
+      window.open("https://wa.me/31XXXXXXXXX?text=" + encodeURIComponent(text), "_blank", "noopener");
+      const note = document.getElementById("formNote");
+      if (note) note.hidden = false;
+    });
+  }
+
   const cartFab = document.getElementById("cartFab");
   const cartDrawer = document.getElementById("cartDrawer");
   const cartBackdrop = document.getElementById("cartBackdrop");

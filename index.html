@@ -14,7 +14,14 @@
   <meta property="og:site_name" content="Rijschool DriveAway">
   <meta property="og:title" content="Rijschool DriveAway | Rijles in Den Haag en omgeving">
   <meta property="og:description" content="Vaste ervaren instructeur, flexibele lestijden en ophalen aan huis. Rijles in Den Haag, Rijswijk, Voorburg, Leidschendam en Delft.">
-  <meta property="og:image" content="https://baspappa.github.io/main/DriveAway_Logo_PNG.png">
+  <meta property="og:image" content="https://baspappa.github.io/main/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
@@ -194,7 +201,7 @@
         <p class="muted section-intro">Kies het pakket dat bij jou past. <strong>Betalen in termijnen kan bij elk pakket:</strong> in één keer of in 6 maandelijkse termijnen, het bedrag per maand staat bij elk pakket.</p>
         <div class="packages-slider" id="packagesSlider">
           <article class="package card reveal">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=900&amp;q=60');"></div>
             <div class="pkg-body">
               <div class="pkg-eyebrow">Pakket 1</div>
               <h3>Startpakket</h3>
@@ -211,7 +218,7 @@
           </article>
           <article class="package card popular reveal">
             <div class="badge-top">Meest gekozen</div>
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=900&amp;q=60');"></div>
             <div class="pkg-body">
               <div class="pkg-eyebrow">Pakket 2</div>
               <h3>Pluspakket</h3>
@@ -227,7 +234,7 @@
             </div>
           </article>
           <article class="package card reveal">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&amp;fit=crop&amp;w=900&amp;q=60');"></div>
             <div class="pkg-body">
               <div class="pkg-eyebrow">Pakket 3</div>
               <h3>Compleetpakket</h3>
@@ -243,7 +250,7 @@
             </div>
           </article>
           <article class="package card reveal">
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&amp;fit=crop&amp;w=900&amp;q=60');"></div>
             <div class="pkg-body">
               <div class="pkg-eyebrow">Pakket 4</div>
               <h3>Premiumpakket</h3>
@@ -260,7 +267,7 @@
           </article>
           <article class="package card spoed reveal">
             <div class="badge-top spoed">⚡ Spoedopleiding</div>
-            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=1600&amp;q=70');"></div>
+            <div class="pkg-img" style="background-image:url('https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&amp;fit=crop&amp;w=900&amp;q=60');"></div>
             <div class="pkg-body">
               <div class="pkg-eyebrow">Spoed</div>
               <h3>Spoedopleiding</h3>
@@ -476,22 +483,24 @@
       </div>
     </section>
 
-    <section id="aanmelden" class="section reveal signup-section">
+    <section id="aanmelden" class="section reveal">
       <div class="wrap">
+        <h2>Aanmelden</h2>
+        <p class="muted section-intro">Vul het formulier in, stuur een WhatsApp of bel even. We reageren zo snel mogelijk en plannen samen je eerste les.</p>
         <div class="card">
           <h3>Snel aanmelden</h3>
-          <p class="muted">Vul dit in of stuur direct een WhatsApp. We reageren zo snel mogelijk.</p>
           <div class="hero-buttons signup-actions">
             <a class="btn whatsapp" href="https://wa.me/31XXXXXXXXX">Aanmelden via WhatsApp</a>
             <a class="btn blue" href="tel:+31619701710">Bel direct</a>
           </div>
-          <form action="#" method="post">
+          <form id="signupForm" action="#" method="post">
             <div class="grid two">
-              <label>Naam<br><input type="text" required></label>
-              <label>Telefoon<br><input type="tel" required></label>
+              <label>Naam<br><input type="text" id="formNaam" name="naam" autocomplete="name" required></label>
+              <label>Telefoon<br><input type="tel" id="formTelefoon" name="telefoon" autocomplete="tel" inputmode="tel" pattern="[0-9+ ()-]{8,}" title="Vul een geldig telefoonnummer in, bijvoorbeeld 06 12345678" required></label>
             </div>
-            <label>Bericht (optioneel)<br><textarea rows="3" id="formBericht"></textarea></label>
-            <button class="btn primary" type="submit">Versturen</button>
+            <label>Bericht (optioneel)<br><textarea rows="3" id="formBericht" name="bericht"></textarea></label>
+            <button class="btn primary" type="submit">Versturen via WhatsApp</button>
+            <p class="muted small form-note" id="formNote" hidden>WhatsApp is geopend met je bericht. Druk daar op verzenden en we nemen contact met je op.</p>
           </form>
         </div>
       </div>
@@ -528,7 +537,7 @@
     <section id="nieuws" class="section">
       <div class="wrap">
         <h2>Nieuws voor leerlingen</h2>
-        <p class="muted section-intro">Het laatste nieuws van het CBR over theorie, examens en tarieven. Deze berichten worden automatisch bijgewerkt.</p>
+        <p class="muted section-intro">Het laatste nieuws van het CBR over theorie, examens en tarieven.</p>
         <div class="news-grid" id="newsGrid">
           <article class="news-item card">
             <div class="news-date">17-08-2026</div>
@@ -608,8 +617,9 @@
   </aside>
 
   <footer>
-    <div class="wrap muted">
-      © <span id="y"></span> Rijschool DriveAway, rijschool in Den Haag en omgeving
+    <div class="wrap muted footer-inner">
+      <span>© <span id="y"></span> Rijschool DriveAway, rijschool in Den Haag en omgeving</span>
+      <a href="privacy.html">Privacyverklaring</a>
     </div>
   </footer>
 

@@ -224,7 +224,7 @@ ul {
 
 .hero {
   padding: 56px 0 44px;
-  background: linear-gradient(180deg, rgba(253, 238, 244, 0.92), rgba(255, 255, 255, 0.96)), url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1920&q=60") center/cover;
+  background: linear-gradient(180deg, rgba(253, 238, 244, 0.92), rgba(255, 255, 255, 0.96)), url("https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1600&q=55") center/cover;
 }
 
 .hero-inner {
@@ -1098,10 +1098,6 @@ ul {
   margin-right: 7px;
 }
 
-.signup-section {
-  padding-top: 18px;
-}
-
 .signup-actions {
   margin-bottom: 12px;
 }
@@ -1126,6 +1122,33 @@ textarea:focus {
 footer {
   padding: 30px 0;
   border-top: 1px solid #eee;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  font-size: 14px;
+}
+
+.footer-inner a {
+  color: var(--blue-dark);
+  text-decoration: none;
+}
+
+.footer-inner a:hover {
+  text-decoration: underline;
+}
+
+.form-note {
+  margin: 10px 0 0;
+}
+
+.btn.primary,
+.btn.blue,
+.btn.whatsapp {
+  font-weight: 700;
 }
 
 .floating-cta {

@@ -828,18 +828,39 @@ ul {
 }
 
 .pkg-img {
-  height: 150px;
-  background-size: cover;
-  background-position: center;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #3f97cf, #5eb0e5);
   border-bottom: 1px solid var(--line);
-  position: relative;
 }
 
-.pkg-img::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05));
+.pkg-img svg {
+  width: 64px;
+  height: 32px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18));
+}
+
+.pkg-img-2 {
+  background: linear-gradient(135deg, #2f7fb5, #5eb0e5);
+}
+
+.pkg-img-3 {
+  background: linear-gradient(135deg, #35506b, #5eb0e5);
+}
+
+.pkg-img-4 {
+  background: linear-gradient(135deg, #3f97cf, #8fcbef);
+}
+
+.pkg-img-5 {
+  background: linear-gradient(135deg, var(--brand-dark), #e0679a);
+}
+
+.pkg-img-5 svg circle,
+.pkg-img-5 svg path + path {
+  fill: var(--brand-dark);
 }
 
 .pkg-body {
@@ -1436,7 +1457,12 @@ footer {
   }
 
   .pkg-img {
-    height: 64px;
+    height: 56px;
+  }
+
+  .pkg-img svg {
+    width: 44px;
+    height: 22px;
   }
 
   .pkg-body {

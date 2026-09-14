@@ -1153,9 +1153,19 @@ footer {
   font-size: 14px;
 }
 
-.footer-inner a {
+.footer-inner a,
+.pkg-voorwaarden a {
   color: var(--blue-dark);
   text-decoration: none;
+}
+
+.pkg-voorwaarden {
+  margin: 16px 0 0;
+  text-align: center;
+}
+
+.pkg-voorwaarden a:hover {
+  text-decoration: underline;
 }
 
 .footer-inner a:hover {
